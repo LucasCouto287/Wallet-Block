@@ -36,3 +36,13 @@
 		"concatemoji": "https:\/\/blockkeeper.io\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.3"
 	}
 };
+! function(e, a, t) {
+	var r, n, o, i, p = a.createElement("canvas"),
+		s = p.getContext && p.getContext("2d");
+
+	function c(e, t) {
+		var a = String.fromCharCode;
+		s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, e), 0, 0);
+		var r = p.toDataURL();
+		return s.clearRect(0, 0, p.width, p.height), s.fillText(a.apply(this, t), 0, 0), r === p.toDataURL()
+	}
