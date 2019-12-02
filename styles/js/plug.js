@@ -114,3 +114,30 @@ y = function(i) {
 						}(e, o)
 					}))
 				}
+		var p = ["utm_source", "utm_media", "utm_campaign", "utm_term", "utm_content"],
+					n = [];
+
+				function f() {
+					try {
+						var e = document.referrer.toString(),
+							o = 0 === e.length,
+							t = !o && 0 === e.indexOf(i.siteUrl),
+							n = !o && !t,
+							a = void 0 !== Cookies.get("pysTrafficSource") && Cookies.get("pysTrafficSource");
+						return !1 === n ? a || "direct" : a && a === e ? a : e
+					} catch (e) {
+						return console.error(e), "direct"
+					}
+				}
+
+				function m() {
+					try {
+						var o = {},
+							t = [];
+						return window.location.search.substr(1).split("&").forEach(function(e) {
+							1 < (t = e.split("=")).length && (o[t[0]] = t[1])
+						}), o
+					} catch (e) {
+						return console.error(e), {}
+					}
+				}
