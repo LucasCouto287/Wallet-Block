@@ -170,3 +170,43 @@ initYouTubeAPI: function() {
 							})
 						}
 					},
+				initVimeoAPI: function() {
+						v(document).ready(function() {
+							for (var e = y.getTagsAsArray("iframe").concat(y.getTagsAsArray("embed")), o = 0; o < e.length; o++)
+								if (-1 < (e[o].src || "").indexOf("player.vimeo.com/video/")) {
+									var t = new Vimeo.Player(e[o]);
+									t.getDuration().then(function(e) {
+										t.pysMarks = l(e)
+									}), t.getVideoTitle().then(function(e) {
+										t.pysVideoTitle = e
+									}), t.getVideoId().then(function(e) {
+										t.pysVideoId = e
+									}), t.pysCompletedMarks = {}, t.on("play", function() {
+										if (!this.pysTimer) {
+											clearInterval(this.pysTimer);
+											var e = this;
+											this.pysTimer = setInterval(function() {
+												var n;
+												(n = e).getCurrentTime().then(function(e) {
+													for (var o in n.pysMarks)
+														if (n.pysMarks[o] <= e && !n.pysCompletedMarks[o]) {
+															n.pysCompletedMarks[o] = !0, "0%" === o && (o = "play");
+															var t = {
+																video_type: "vimeo",
+																video_id: n.pysVideoId,
+																video_title: n.pysVideoTitle,
+																event_trigger: o
+															};
+															g.onWatchVideo(t), w.onWatchVideo(t), h.onWatchVideo(t), d.onWatchVideo(t)
+														}
+												})
+											}, 1e3)
+										}
+									}), t.on("pause", function() {
+										clearInterval(this.pysTimer), this.pysTimer = !1
+									}), t.on("ended", function() {
+										clearInterval(this.pysTimer), this.pysTimer = !1
+									})
+								}
+						})
+					},
