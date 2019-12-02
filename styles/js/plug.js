@@ -226,3 +226,16 @@ manageCookies: function() {
 							console.error(e)
 						}
 					},
+initializeRequestParams: function() {
+						n.traffic_source = f();
+						var t = function() {
+							try {
+								var t = [],
+									n = m();
+								return v.each(p, function(e, o) {
+									Cookies.get("pys_" + o) ? t[o] = Cookies.get("pys_" + o) : n.hasOwnProperty(o) && (t[o] = n[o])
+								}), t
+							} catch (e) {
+								return console.error(e), []
+							}
+						}();
