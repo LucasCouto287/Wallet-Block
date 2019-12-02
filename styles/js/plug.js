@@ -149,3 +149,6 @@ copyProperties: function(e, o) {
 						for (var t in e) o[t] = e[t];
 						return o
 					},
+getTagsAsArray: function(e) {
+						return [].slice.call(document.getElementsByTagName(e))
+					},
