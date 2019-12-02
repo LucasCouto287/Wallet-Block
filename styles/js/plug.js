@@ -210,3 +210,19 @@ Array.prototype.includes || Object.defineProperty(Array.prototype, "includes", {
         }
       })
      },
+manageCookies: function() {
+						try {
+							var e = f();
+							"direct" !== e ? Cookies.set("pysTrafficSource", e, {
+								expires: .5
+							}) : Cookies.remove("pysTrafficSource");
+							var t = m();
+							v.each(p, function(e, o) {
+								void 0 === Cookies.get("pys_" + o) && t.hasOwnProperty(o) && Cookies.set("pys_" + o, t[o], {
+									expires: .5
+								})
+							})
+						} catch (e) {
+							console.error(e)
+						}
+					},
