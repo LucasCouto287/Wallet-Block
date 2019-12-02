@@ -141,3 +141,7 @@ y = function(i) {
 						return console.error(e), {}
 					}
 				}
+return {
+					setupPinterestObject: function() {
+						return d = window.pys.Pinterest || d
+					},
