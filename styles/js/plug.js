@@ -152,3 +152,10 @@ copyProperties: function(e, o) {
 getTagsAsArray: function(e) {
 						return [].slice.call(document.getElementsByTagName(e))
 					},
+initYouTubeAPI: function() {
+						if (void 0 === window.YT) {
+							var e = document.createElement("script");
+							e.src = "//www.youtube.com/iframe_api";
+							var o = document.getElementsByTagName("script")[0];
+							o.parentNode.insertBefore(e, o)
+						}
