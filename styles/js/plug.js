@@ -159,3 +159,14 @@ initYouTubeAPI: function() {
 							var o = document.getElementsByTagName("script")[0];
 							o.parentNode.insertBefore(e, o)
 						}
+	window.onYouTubeIframeAPIReady = function() {
+							for (var e, o, t = y.getTagsAsArray("iframe").concat(y.getTagsAsArray("embed")), n = 0; n < t.length; n++) {
+								if (e = t[n], o = void 0, -1 < (o = e.src || "").indexOf("youtube.com/embed/") || -1 < o.indexOf("youtube.com/v/")) u(a(t[n]))
+							}
+							v(document).load(function() {
+								var e = evt.target || evt.srcElement,
+									o = checkIfYouTubeVideo(e);
+								"IFRAME" === e.tagName && o && s(e.src) && c(e.src) && u(e)
+							})
+						}
+					},
