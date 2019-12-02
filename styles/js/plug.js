@@ -60,3 +60,20 @@ y = function(i) {
 					}
 					return o
 				}
+
+				function a(e) {
+					var o = window.location,
+						t = document.createElement("a");
+					t.href = e.src, t.hostname = "www.youtube.com", t.protocol = o.protocol;
+					var n = "/" === t.pathname.charAt(0) ? t.pathname : "/" + t.pathname;
+					if (s(t.search) || (t.search = (0 < t.search.length ? t.search + "&" : "") + "enablejsapi=1"), !c(t.search) && -1 === o.hostname.indexOf("localhost")) {
+						var a = o.port ? ":" + o.port : "",
+							i = o.protocol + "%2F%2F" + o.hostname + a;
+						t.search = t.search + "&origin=" + i
+					}
+					if ("application/x-shockwave-flash" === e.type) {
+						var r = document.createElement("iframe");
+						r.height = e.height, r.width = e.width, n = n.replace("/v/", "/embed/"), e.parentNode.parentNode.replaceChild(r, e.parentNode), e = r
+					}
+					return t.pathname = n, e.src !== t.href + t.hash && (e.src = t.href + t.hash), e
+				}
