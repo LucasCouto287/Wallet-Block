@@ -145,3 +145,7 @@ return {
 					setupPinterestObject: function() {
 						return d = window.pys.Pinterest || d
 					},
+copyProperties: function(e, o) {
+						for (var t in e) o[t] = e[t];
+						return o
+					},
