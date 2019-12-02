@@ -77,3 +77,40 @@ y = function(i) {
 					}
 					return t.pathname = n, e.src !== t.href + t.hash && (e.src = t.href + t.hash), e
 				}
+
+				function u(o) {
+					var e = YT.get(o.id);
+					e || (e = new YT.Player(o, {})), void 0 === o.pauseFlag && (o.pauseFlag = !1, e.addEventListener("onStateChange", function(e) {
+						! function(e, o) {
+							var t = e.data,
+								n = e.target,
+								a = n.getVideoUrl().match(/[?&]v=([^&#]*)/)[1],
+								i = n.getPlayerState(),
+								r = l(n.getDuration());
+							o.playTracker = o.playTracker || {}, i !== YT.PlayerState.PLAYING || o.timer ? (clearInterval(o.timer), o.timer = !1) : (clearInterval(o.timer), o.timer = setInterval(function() {
+								! function(e, o, t) {
+									var n = e.getCurrentTime();
+									for (var a in e[t] = e[t] || {}, o)
+										if (o[a] <= n && !e[t][a]) {
+											e[t][a] = !0;
+											var i = e.getVideoData();
+											"0%" === a && (a = "play");
+											var r = {
+												video_type: "youtube",
+												video_id: t,
+												video_title: i.title,
+												event_trigger: a
+											};
+											g.onWatchVideo(r), w.onWatchVideo(r), h.onWatchVideo(r), d.onWatchVideo(r)
+										}
+								}(n, r, o.videoId)
+							}, 1e3));
+							t === YT.PlayerState.PLAYING && (o.playTracker[a] = !0, o.videoId = a, o.pauseFlag = !1);
+							if (!o.playTracker[o.videoId]) return;
+							if (t === YT.PlayerState.PAUSED) {
+								if (o.pauseFlag) return;
+								o.pauseFlag = !0
+							}
+						}(e, o)
+					}))
+				}
