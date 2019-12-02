@@ -36,3 +36,27 @@ function(v, d) {
 				onEddAddToCartOnButtonEvent: function(e, o, t) {},
 				onEddRemoveFromCartEvent: function(e) {}
 			},
+y = function(i) {
+				var d = e,
+					r = !1;
+
+				function o() {
+					i.gdpr.all_disabled_by_api || (i.gdpr.facebook_disabled_by_api || g.loadPixel(), i.gdpr.analytics_disabled_by_api || w.loadPixel(), i.gdpr.google_ads_disabled_by_api || h.loadPixel(), i.gdpr.pinterest_disabled_by_api || d.loadPixel())
+				}
+
+				function s(e) {
+					return -1 < e.indexOf("enablejsapi")
+				}
+
+				function c(e) {
+					return -1 < e.indexOf("origin")
+				}
+
+				function l(e) {
+					for (var o = {}, t = [0, 10, 50, 90, 100], n = 0; n < t.length; n++) {
+						var a = t[n],
+							i = e * a / 100;
+						100 === a && (i -= 1), o[a + "%"] = Math.floor(i)
+					}
+					return o
+				}
