@@ -650,3 +650,50 @@ fireEvent: function(e, o) {
 						n(e)
 					})
 				}
+function s(e) {
+					var o = {
+						ViewContent: "view_item",
+						AddToCart: "add_to_cart",
+						AddToWishList: "add_to_wishlist",
+						InitiateCheckout: "begin_checkout",
+						Purchase: "purchase",
+						Lead: "generate_lead",
+						CompleteRegistration: "sign_up",
+						AddPaymentInfo: "set_checkout_option"
+					};
+					return o.hasOwnProperty(e) ? o[e] : e
+				}
+				return {
+					isEnabled: function() {
+						return d.hasOwnProperty("google_ads")
+					},
+					disable: function() {
+						t = !1
+					},
+					loadPixel: function() {
+						!t && this.isEnabled() && y.consentGiven("google_ads") && (y.loadGoogleTag(d.google_ads.conversion_ids[0]), d.google_ads.conversion_ids.forEach(function(e) {
+							gtag("config", e)
+						}), t = !0, y.fireStaticEvents("google_ads"))
+					},
+					fireEvent: function(e, o) {
+						return !(!t || !this.isEnabled()) && (o.delay = o.delay || 0, o.params = o.params || {}, o.ids = o.ids || [], 0 === o.delay ? n(e, o.params, o.ids) : setTimeout(function(e, o, t) {
+							n(e, o, t)
+						}, 1e3 * o.delay, e, o.params, o.ids), !0)
+					},
+					onAdSenseEvent: function() {},
+					onClickEvent: function(e, o) {
+						t && this.isEnabled() && d.google_ads.clickEventEnabled && this.fireEvent(e, {
+							params: {
+								event_category: "ClickEvent",
+								event_label: o.tag_text
+							}
+						})
+					},
+					onWatchVideo: function(e) {
+						t && this.isEnabled() && d.google_ads.watchVideoEnabled && this.fireEvent(e.event_trigger, {
+							params: {
+								event_category: "WatchVideo",
+								event_label: e.video_title
+							}
+						})
+					},
