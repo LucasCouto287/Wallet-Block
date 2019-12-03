@@ -614,3 +614,39 @@ fireEvent: function(e, o) {
 							})
 						}
 					},
+	onWooPayPalEvent: function() {
+						eventName = s(d.woo.paypalEventName), window.pysWooPayPalData = window.pysWooPayPalData || [], window.pysWooPayPalData.hasOwnProperty("ga") && this.fireEvent(eventName, {
+							params: y.copyProperties(window.pysWooPayPalData.ga, {})
+						})
+					},
+					onEddAddToCartOnButtonEvent: function(e, o, t) {
+						var n;
+						if (window.pysEddProductData.hasOwnProperty(e) && (n = o ? e + "_" + o : e, window.pysEddProductData[e].hasOwnProperty(n) && window.pysEddProductData[e][n].hasOwnProperty("ga"))) {
+							var a = y.copyProperties(window.pysEddProductData[e][n].ga, {});
+							a.items[0].quantity = t, this.fireEvent("add_to_cart", {
+								params: a
+							})
+						}
+					},
+					onEddRemoveFromCartEvent: function(e) {
+						e.hasOwnProperty("ga") && this.fireEvent("remove_from_cart", {
+							params: y.copyProperties(e.ga, {})
+						})
+					}
+				}
+			}(d),
+			h = function(d) {
+				var t = !1;
+
+				function n(o, t, e) {
+					var n = function(e) {
+						params = y.copyProperties(t, {
+							send_to: e
+						}), d.debug && console.log("[Google Ads #" + e + "] " + o, params), gtag("event", o, params)
+					};
+					e.length ? e.forEach(function(e) {
+						n(e)
+					}) : d.google_ads.conversion_ids.forEach(function(e) {
+						n(e)
+					})
+				}
