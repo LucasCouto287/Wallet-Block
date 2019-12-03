@@ -450,3 +450,35 @@ consentGiven: function(e) {
 							})
 						}
 					},
+	onWooRemoveFromCartEvent: function(e) {
+						window.pysWooRemoveFromCartData = window.pysWooRemoveFromCartData || [], window.pysWooRemoveFromCartData[e].hasOwnProperty("facebook") && this.fireEvent("RemoveFromCart", {
+							params: y.copyProperties(window.pysWooRemoveFromCartData[e].facebook, {})
+						})
+					},
+					onWooAffiliateEvent: function(e) {
+						window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("facebook") && this.fireEvent(d.woo.affiliateEventName, {
+							params: y.copyProperties(window.pysWooProductData[e].facebook, {})
+						})
+					},
+					onWooPayPalEvent: function() {
+						window.pysWooPayPalData = window.pysWooPayPalData || [], window.pysWooPayPalData.hasOwnProperty("facebook") && this.fireEvent(d.woo.paypalEventName, {
+							params: y.copyProperties(window.pysWooPayPalData.facebook, d.facebook.contentParams)
+						})
+					},
+					onEddAddToCartOnButtonEvent: function(e, o, t) {
+						var n;
+						if (window.pysEddProductData.hasOwnProperty(e) && (n = o ? e + "_" + o : e, window.pysEddProductData[e].hasOwnProperty(n) && window.pysEddProductData[e][n].hasOwnProperty("facebook"))) {
+							var a = y.copyProperties(window.pysEddProductData[e][n].facebook, {});
+							d.edd.addToCartOnButtonValueEnabled && "global" !== d.edd.addToCartOnButtonValueOption && (a.value = a.value * t);
+							var i = JSON.parse(a.contents);
+							i[0].quantity = t, a.contents = JSON.stringify(i), this.fireEvent("AddToCart", {
+								params: a
+							})
+						}
+					},
+					onEddRemoveFromCartEvent: function(e) {
+						e.hasOwnProperty("facebook") && this.fireEvent("RemoveFromCart", {
+							params: y.copyProperties(e.facebook, {})
+						})
+					}
+				}
