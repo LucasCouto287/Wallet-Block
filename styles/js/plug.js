@@ -309,3 +309,9 @@ fireStaticEvents: function(a) {
 							})
 						})
 					},
+	loadGoogleTag: function(e) {
+						var o, t, n, a;
+						r || (window, o = document, t = "//www.googletagmanager.com/gtag/js?id=" + e, n = o.createElement("script"), a = o.getElementsByTagName("script")[0], n.async = 1, n.src = t, a.parentNode.insertBefore(n, a), window.dataLayer = window.dataLayer || [], window.gtag = window.gtag || function() {
+							dataLayer.push(arguments)
+						}, gtag("js", new Date), r = !0)
+					},
