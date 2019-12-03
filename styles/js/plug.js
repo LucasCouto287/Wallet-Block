@@ -375,3 +375,78 @@ consentGiven: function(e) {
 					}
 				}
 			}(d),
+	g = function(d) {
+				var a = ["PageView", "ViewContent", "Search", "AddToCart", "AddToWishlist", "InitiateCheckout", "AddPaymentInfo", "Purchase", "Lead", "Subscribe", "CustomizeProduct", "FindLocation", "StartTrial", "SubmitApplication", "Schedule", "Contact", "Donate"],
+					i = !1;
+
+				function t(e, o) {
+					var t = a.includes(e) ? "track" : "trackCustom",
+						n = {};
+					y.copyProperties(o, n), y.copyProperties(d.commonEventParams, n), y.copyProperties(y.getRequestParams(), n), d.debug && console.log("[Facebook] " + e, n), fbq(t, e, n)
+				}
+				return {
+					isEnabled: function() {
+						return d.hasOwnProperty("facebook")
+					},
+					disable: function() {
+						i = !1
+					},
+					loadPixel: function() {
+						var e, o, t, n, a;
+						!i && this.isEnabled() && y.consentGiven("facebook") && (e = window, o = document, e.fbq || (t = e.fbq = function() {
+							t.callMethod ? t.callMethod.apply(t, arguments) : t.queue.push(arguments)
+						}, e._fbq || (e._fbq = t), (t.push = t).loaded = !0, t.version = "2.0", t.queue = [], (n = o.createElement("script")).async = !0, n.src = "https://connect.facebook.net/en_US/fbevents.js", (a = o.getElementsByTagName("script")[0]).parentNode.insertBefore(n, a)), d.facebook.pixelIds.forEach(function(e) {
+							d.facebook.removeMetadata && fbq("set", "autoConfig", !1, e), fbq("init", e, d.facebook.advancedMatching)
+						}), i = !0, y.fireStaticEvents("facebook"))
+					},
+					fireEvent: function(e, o) {
+						return !(!i || !this.isEnabled()) && (o.delay = o.delay || 0, o.params = o.params || {}, 0 === o.delay ? t(e, o.params) : setTimeout(function(e, o) {
+							t(e, o)
+						}, 1e3 * o.delay, e, o.params), !0)
+					},
+					onAdSenseEvent: function() {
+						i && this.isEnabled() && d.facebook.adSenseEventEnabled && this.fireEvent("AdSense", {
+							params: y.copyProperties(d.facebook.contentParams, {})
+						})
+					},
+					onClickEvent: function(e) {
+						i && this.isEnabled() && d.facebook.clickEventEnabled && this.fireEvent("ClickEvent", {
+							params: y.copyProperties(d.facebook.contentParams, e)
+						})
+					},
+					onWatchVideo: function(e) {
+						i && this.isEnabled() && d.facebook.watchVideoEnabled && this.fireEvent("WatchVideo", {
+							params: y.copyProperties(d.facebook.contentParams, e)
+						})
+					},
+					onCommentEvent: function() {
+						i && this.isEnabled() && d.facebook.commentEventEnabled && this.fireEvent("Comment", {
+							params: y.copyProperties(d.facebook.contentParams, {})
+						})
+					},
+					onFormEvent: function(e) {
+						i && this.isEnabled() && d.facebook.formEventEnabled && this.fireEvent("Form", {
+							params: y.copyProperties(d.facebook.contentParams, e)
+						})
+					},
+					onDownloadEvent: function(e) {
+						i && this.isEnabled() && d.facebook.downloadEnabled && this.fireEvent("Download", {
+							params: y.copyProperties(d.facebook.contentParams, e)
+						})
+					},
+					onWooAddToCartOnButtonEvent: function(e) {
+						window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("facebook") && this.fireEvent("AddToCart", {
+							params: y.copyProperties(window.pysWooProductData[e].facebook, {})
+						})
+					},
+					onWooAddToCartOnSingleEvent: function(e, o, t, n, a) {
+						if (window.pysWooProductData = window.pysWooProductData || [], window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("facebook")) {
+							t && !d.facebook.wooVariableAsSimple && (e = parseInt(a.find('input[name="variation_id"]').val()));
+							var i = y.copyProperties(window.pysWooProductData[e].facebook, {});
+							d.woo.addToCartOnButtonValueEnabled && "global" !== d.woo.addToCartOnButtonValueOption && (i.value = i.value * o), i.hasOwnProperty("contents") && (i.contents[0].quantity = o);
+							var r = n ? d.woo.affiliateEventName : "AddToCart";
+							this.fireEvent(r, {
+								params: i
+							})
+						}
+					},
