@@ -260,3 +260,15 @@ getRequestParams: function() {
 							v(this).addClass("pys-mouse-over-" + e), y.fireDynamicEvent(e)
 						})
 					},
+	setupCSSClickEvents: function(e, o) {
+						v(document).onFirst("click", o.join(","), function() {
+							y.fireDynamicEvent(e)
+						})
+					},
+					setupURLClickEvents: function() {
+						v("a[data-pys-event-id]").onFirst("click", function(e) {
+							v(this).attr("data-pys-event-id").split(",").forEach(function(e) {
+								e = parseInt(e), !1 === isNaN(e) && y.fireDynamicEvent(e)
+							})
+						})
+					},
