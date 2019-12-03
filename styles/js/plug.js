@@ -511,3 +511,27 @@ consentGiven: function(e) {
 					};
 					return o.hasOwnProperty(e) ? o[e] : e
 				}
+return {
+					isEnabled: function() {
+						return d.hasOwnProperty("ga")
+					},
+					disable: function() {
+						t = !1
+					},
+					loadPixel: function() {
+						if (!t && this.isEnabled() && y.consentGiven("analytics")) {
+							y.loadGoogleTag(d.ga.trackingIds[0]);
+							var o = {
+								dimension1: "event_hour",
+								dimension2: "event_day",
+								dimension3: "event_month"
+							};
+							"ecomm" === d.ga.retargetingLogic ? (o.dimension4 = "ecomm_prodid", o.dimension5 = "ecomm_pagetype", o.dimension6 = "ecomm_totalvalue") : (o.dimension4 = "dynx_itemid", o.dimension5 = "dynx_pagetype", o.dimension6 = "dynx_totalvalue"), d.ga.trackingIds.forEach(function(e) {
+								gtag("config", e, {
+									link_attribution: d.ga.enhanceLinkAttr,
+									anonymize_ip: d.ga.anonimizeIP,
+									custom_map: o
+								})
+							}), t = !0, y.fireStaticEvents("ga")
+						}
+					},
