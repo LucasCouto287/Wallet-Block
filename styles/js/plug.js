@@ -315,3 +315,15 @@ fireStaticEvents: function(a) {
 							dataLayer.push(arguments)
 						}, gtag("js", new Date), r = !0)
 					},
+loadPixels: function() {
+						i.gdpr.ajax_enabled ? v.get({
+							url: i.ajaxUrl,
+							dataType: "json",
+							data: {
+								action: "pys_get_gdpr_filters_values"
+							},
+							success: function(e) {
+								e.success && (i.gdpr.all_disabled_by_api = e.data.all_disabled_by_api, i.gdpr.facebook_disabled_by_api = e.data.facebook_disabled_by_api, i.gdpr.analytics_disabled_by_api = e.data.analytics_disabled_by_api, i.gdpr.google_ads_disabled_by_api = e.data.google_ads_disabled_by_api, i.gdpr.pinterest_disabled_by_api = e.data.pinterest_disabled_by_api), o()
+							}
+						}) : o()
+					},
