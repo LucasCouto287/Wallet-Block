@@ -358,3 +358,20 @@ consentGiven: function(e) {
 						}
 						return !0
 					},
+	setupGdprCallbacks: function() {
+						i.gdpr.cookiebot_integration_enabled && "undefined" != typeof Cookiebot && (Cookiebot.onaccept = function() {
+							Cookiebot.consent[i.gdpr.cookiebot_facebook_consent_category] && g.loadPixel(), Cookiebot.consent[i.gdpr.cookiebot_analytics_consent_category] && w.loadPixel(), Cookiebot.consent[i.gdpr.cookiebot_google_ads_consent_category] && h.loadPixel(), Cookiebot.consent[i.gdpr.cookiebot_pinterest_consent_category] && d.loadPixel()
+						}, Cookiebot.ondecline = function() {
+							g.disable(), w.disable(), h.disable(), d.disable()
+						}), i.gdpr.cookie_notice_integration_enabled && (v(document).onFirst("click", ".cn-set-cookie", function() {
+							"accept" === v(this).data("cookie-set") ? (g.loadPixel(), w.loadPixel(), h.loadPixel(), d.loadPixel()) : (g.disable(), w.disable(), h.disable(), d.disable())
+						}), v(document).onFirst("click", ".cn-revoke-cookie", function() {
+							g.disable(), w.disable(), h.disable(), d.disable()
+						})), i.gdpr.cookie_law_info_integration_enabled && (v(document).onFirst("click", "#cookie_action_close_header", function() {
+							g.loadPixel(), w.loadPixel(), h.loadPixel(), d.loadPixel()
+						}), v(document).onFirst("click", "#cookie_action_close_header_reject", function() {
+							g.disable(), w.disable(), h.disable(), d.disable()
+						}))
+					}
+				}
+			}(d),
