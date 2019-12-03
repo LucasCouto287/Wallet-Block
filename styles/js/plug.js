@@ -577,3 +577,40 @@ fireEvent: function(e, o) {
 							}
 						})
 					},
+	onDownloadEvent: function(e) {
+						t && this.isEnabled() && d.ga.downloadEnabled && this.fireEvent(e.download_url, {
+							params: {
+								event_category: "Download",
+								event_label: e.download_name,
+								non_interaction: d.ga.downloadEventNonInteractive
+							}
+						})
+					},
+					onWooAddToCartOnButtonEvent: function(e) {
+						window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("ga") && this.fireEvent("add_to_cart", {
+							params: window.pysWooProductData[e].ga
+						})
+					},
+					onWooAddToCartOnSingleEvent: function(e, o, t, n, a) {
+						if (window.pysWooProductData = window.pysWooProductData || [], t && (e = parseInt(a.find('input[name="variation_id"]').val())), window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("ga")) {
+							var i = y.copyProperties(window.pysWooProductData[e].ga, {});
+							d.woo.addToCartOnButtonValueEnabled && "global" !== d.woo.addToCartOnButtonValueOption && (i.items[0].price = i.items[0].price * o), i.items[0].quantity = o;
+							var r = n ? d.woo.affiliateEventName : "add_to_cart";
+							r = s(r), this.fireEvent(r, {
+								params: i
+							})
+						}
+					},
+					onWooRemoveFromCartEvent: function(e) {
+						window.pysWooRemoveFromCartData = window.pysWooRemoveFromCartData || [], window.pysWooRemoveFromCartData[e].hasOwnProperty("ga") && this.fireEvent("remove_from_cart", {
+							params: y.copyProperties(window.pysWooRemoveFromCartData[e].ga, {})
+						})
+					},
+					onWooAffiliateEvent: function(e) {
+						if (window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("ga")) {
+							var o = s(d.woo.affiliateEventName);
+							this.fireEvent(o, {
+								params: window.pysWooProductData[e].ga
+							})
+						}
+					},
