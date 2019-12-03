@@ -697,3 +697,42 @@ function s(e) {
 							}
 						})
 					},
+	onCommentEvent: function() {
+						t && this.isEnabled() && d.google_ads.commentEventEnabled && this.fireEvent(window.location.href, {
+							params: {
+								event_category: "Comment",
+								event_label: v(document).find("title").text()
+							}
+						})
+					},
+					onFormEvent: function(e) {
+						t && this.isEnabled() && d.google_ads.formEventEnabled && this.fireEvent(window.location.href, {
+							params: {
+								event_category: "Form",
+								event_label: e.form_class
+							}
+						})
+					},
+					onDownloadEvent: function(e) {
+						t && this.isEnabled() && d.google_ads.downloadEnabled && this.fireEvent(e.download_url, {
+							params: {
+								event_category: "Download",
+								event_label: e.download_name
+							}
+						})
+					},
+					onWooAddToCartOnButtonEvent: function(e) {
+						window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("google_ads") && this.fireEvent("add_to_cart", {
+							params: window.pysWooProductData[e].google_ads
+						})
+					},
+					onWooAddToCartOnSingleEvent: function(e, o, t, n, a) {
+						if (window.pysWooProductData = window.pysWooProductData || [], t && (e = parseInt(a.find('input[name="variation_id"]').val())), window.pysWooProductData.hasOwnProperty(e) && window.pysWooProductData[e].hasOwnProperty("google_ads")) {
+							var i = y.copyProperties(window.pysWooProductData[e].google_ads, {});
+							d.woo.addToCartOnButtonValueEnabled && "global" !== d.woo.addToCartOnButtonValueOption && (i.items[0].price = i.items[0].price * o), i.items[0].quantity = o;
+							var r = n ? d.woo.affiliateEventName : "add_to_cart";
+							r = s(r), this.fireEvent(r, {
+								params: i
+							})
+						}
+					},
