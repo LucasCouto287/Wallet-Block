@@ -284,3 +284,18 @@ setupScrollPosEvents: function(t, e) {
 							})
 						})
 					},
+	fireDynamicEvent: function(e) {
+						if (i.dynamicEventsParams.hasOwnProperty(e)) {
+							var o = {};
+							i.dynamicEventsParams[e].hasOwnProperty("facebook") && (o = y.copyProperties(i.dynamicEventsParams[e].facebook, {}), g.fireEvent(o.name, {
+								params: o.params
+							})), i.dynamicEventsParams[e].hasOwnProperty("ga") && (o = y.copyProperties(i.dynamicEventsParams[e].ga, {}), w.fireEvent(o.action, {
+								params: o.params
+							})), i.dynamicEventsParams[e].hasOwnProperty("google_ads") && (o = y.copyProperties(i.dynamicEventsParams[e].google_ads, {}), h.fireEvent(o.action, {
+								params: o.params,
+								ids: o.ids
+							})), i.dynamicEventsParams[e].hasOwnProperty("pinterest") && (o = y.copyProperties(i.dynamicEventsParams[e].pinterest, {}), d.fireEvent(o.name, {
+								params: o.params
+							}))
+						}
+					},
