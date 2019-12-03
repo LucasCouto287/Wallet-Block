@@ -272,3 +272,15 @@ getRequestParams: function() {
 							})
 						})
 					},
+setupScrollPosEvents: function(t, e) {
+						var n = {},
+							a = v(document).height() - v(window).height();
+						v.each(e, function(e, o) {
+							o = a * o / 100, o = Math.round(o), n[o] = t
+						}), v(document).scroll(function() {
+							var t = v(window).scrollTop();
+							v.each(n, function(e, o) {
+								return t <= e || (null === o || (n[e] = null, void y.fireDynamicEvent(o)))
+							})
+						})
+					},
