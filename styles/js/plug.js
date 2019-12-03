@@ -299,3 +299,13 @@ setupScrollPosEvents: function(t, e) {
 							}))
 						}
 					},
+fireStaticEvents: function(a) {
+						i.staticEvents.hasOwnProperty(a) && v.each(i.staticEvents[a], function(n, e) {
+							v.each(e, function(e, o) {
+								if (o.fired = o.fired || !1, !o.fired) {
+									var t = !1;
+									"facebook" === a ? t = g.fireEvent(n, o) : "ga" === a ? t = w.fireEvent(n, o) : "google_ads" === a ? t = h.fireEvent(n, o) : "pinterest" === a && (t = d.fireEvent(n, o)), o.fired = t
+								}
+							})
+						})
+					},
