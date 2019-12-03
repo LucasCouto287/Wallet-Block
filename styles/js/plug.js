@@ -327,3 +327,34 @@ loadPixels: function() {
 							}
 						}) : o()
 					},
+consentGiven: function(e) {
+						if (i.gdpr.cookiebot_integration_enabled && "undefined" != typeof Cookiebot) {
+							var o = i.gdpr["cookiebot_" + e + "_consent_category"];
+							if (i.gdpr[e + "_prior_consent_enabled"]) {
+								if (!1 === Cookiebot.consented || Cookiebot.consent[o]) return !0
+							} else if (Cookiebot.consent[o]) return !0;
+							return !1
+						}
+						if (i.gdpr.ginger_integration_enabled) {
+							var t = Cookies.get("ginger-cookie");
+							if (i.gdpr[e + "_prior_consent_enabled"]) {
+								if (void 0 === t || "Y" === t) return !0
+							} else if ("Y" === t) return !0;
+							return !1
+						}
+						if (i.gdpr.cookie_notice_integration_enabled && "undefined" != typeof cnArgs) {
+							var n = Cookies.get(cnArgs.cookieName);
+							if (i.gdpr[e + "_prior_consent_enabled"]) {
+								if (void 0 === n || "true" === n) return !0
+							} else if ("true" === n) return !0;
+							return !1
+						}
+						if (i.gdpr.cookie_law_info_integration_enabled) {
+							var a = Cookies.get("viewed_cookie_policy");
+							if (i.gdpr[e + "_prior_consent_enabled"]) {
+								if (void 0 === a || "yes" === a) return !0
+							} else if ("yes" === a) return !0;
+							return !1
+						}
+						return !0
+					},
