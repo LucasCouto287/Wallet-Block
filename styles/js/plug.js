@@ -482,3 +482,32 @@ consentGiven: function(e) {
 						})
 					}
 				}
+	}(d),
+			w = function(d) {
+				var t = !1;
+
+				function n(n, e) {
+					var a = y.copyProperties(e, {}),
+						o = y.getRequestParams();
+					y.copyProperties(o, a);
+					d.ga.trackingIds.forEach(function(e) {
+						var o, t;
+						o = e, t = y.copyProperties(a, {
+							send_to: o
+						}), d.debug && console.log("[Google Analytics #" + o + "] " + n, t), gtag("event", n, t)
+					})
+				}
+
+				function s(e) {
+					var o = {
+						ViewContent: "view_item",
+						AddToCart: "add_to_cart",
+						AddToWishList: "add_to_wishlist",
+						InitiateCheckout: "begin_checkout",
+						Purchase: "purchase",
+						Lead: "generate_lead",
+						CompleteRegistration: "sign_up",
+						AddPaymentInfo: "set_checkout_option"
+					};
+					return o.hasOwnProperty(e) ? o[e] : e
+				}
