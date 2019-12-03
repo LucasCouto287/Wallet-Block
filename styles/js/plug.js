@@ -535,3 +535,45 @@ return {
 							}), t = !0, y.fireStaticEvents("ga")
 						}
 					},
+fireEvent: function(e, o) {
+						return !(!t || !this.isEnabled()) && (o.delay = o.delay || 0, o.params = o.params || {}, 0 === o.delay ? n(e, o.params) : setTimeout(function(e, o) {
+							n(e, o)
+						}, 1e3 * o.delay, e, o.params), !0)
+					},
+					onAdSenseEvent: function() {},
+					onClickEvent: function(e, o) {
+						t && this.isEnabled() && d.ga.clickEventEnabled && this.fireEvent(e, {
+							params: {
+								event_category: "ClickEvent",
+								event_label: o.tag_text,
+								non_interaction: d.ga.clickEventNonInteractive
+							}
+						})
+					},
+					onWatchVideo: function(e) {
+						t && this.isEnabled() && d.ga.watchVideoEnabled && this.fireEvent(e.event_trigger, {
+							params: {
+								event_category: "WatchVideo",
+								event_label: e.video_title,
+								non_interaction: d.ga.watchVideoEventNonInteractive
+							}
+						})
+					},
+					onCommentEvent: function() {
+						t && this.isEnabled() && d.ga.commentEventEnabled && this.fireEvent(window.location.href, {
+							params: {
+								event_category: "Comment",
+								event_label: v(document).find("title").text(),
+								non_interaction: d.ga.commentEventNonInteractive
+							}
+						})
+					},
+					onFormEvent: function(e) {
+						t && this.isEnabled() && d.ga.formEventEnabled && this.fireEvent(window.location.href, {
+							params: {
+								event_category: "Form",
+								event_label: e.form_class,
+								non_interaction: d.ga.formEventNonInteractive
+							}
+						})
+					},
