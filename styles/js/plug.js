@@ -822,3 +822,50 @@ v.each(d.dynamicEventsTriggers, function(t, e) {
 						r = !1;
 					0 === a.length ? r = !0 : a.hasClass("variations_form") && (i = !0), i ? (t = parseInt(a.find('*[name="add-to-cart"]').val()), n = parseInt(a.find('input[name="quantity"]').val())) : r ? (t = d.woo.singleProductId, n = 1) : (t = parseInt(a.find('*[name="add-to-cart"]').val()), n = parseInt(a.find('input[name="quantity"]').val())), g.onWooAddToCartOnSingleEvent(t, n, i, r, a), w.onWooAddToCartOnSingleEvent(t, n, i, r, a), h.onWooAddToCartOnSingleEvent(t, n, i, r, a), c.onWooAddToCartOnSingleEvent(t, n, i, r, a)
 				}
+	})), d.woo.affiliateEnabled && v(".product_type_external").click(function(e) {
+				var o = v(this).data("product_id");
+				void 0 !== o && (g.onWooAffiliateEvent(o), w.onWooAffiliateEvent(o), h.onWooAffiliateEvent(o), c.onWooAffiliateEvent(o))
+			}), d.woo.removeFromCartEnabled && v("body").on("click", d.woo.removeFromCartSelector, function(e) {
+				var o = v(e.currentTarget).attr("href"),
+					t = new RegExp("[\\?&]remove_item=([^&#]*)").exec(o);
+				if (null !== t) {
+					var n = t[1];
+					window.pysWooRemoveFromCartData = window.pysWooRemoveFromCartData || [], window.pysWooRemoveFromCartData.hasOwnProperty(n) && (g.onWooRemoveFromCartEvent(n), w.onWooRemoveFromCartEvent(n), h.onWooRemoveFromCartEvent(n), c.onWooRemoveFromCartEvent(n))
+				}
+			}), d.woo.payPalEnabled && v(document).onFirst("submit click", "#place_order", function(e) {
+				"paypal" === v('form[name="checkout"] input[name="payment_method"]:checked').val() && (g.onWooPayPalEvent(), w.onWooPayPalEvent(), h.onWooPayPalEvent(), c.onWooPayPalEvent())
+			})), d.edd.enabled && (d.edd.addToCartOnButtonEnabled && v("form.edd_download_purchase_form .edd-add-to-cart").click(function(e) {
+				var n, t, o = v(this),
+					a = o.closest("form"),
+					i = o.data("variablePrice"),
+					r = o.data("priceMode"),
+					d = [],
+					s = [];
+				"yes" === i && "multi" === r ? (t = a.find('input[name="download_id"]').val(), v.each(a.find('input[name="edd_options[price_id][]"]:checked'), function(e, o) {
+					d.push(t + "_" + v(o).val())
+				}), v.each(d, function(e, o) {
+					var t = o.split("_", 2);
+					void 0 !== (n = a.find('input[name="edd_download_quantity_' + t[1] + '"]').val()) ? s.push(n) : s.push(1)
+				})) : ("yes" === i && "single" === r ? (t = a.find('input[name="download_id"]').val(), d.push(t + "_" + a.find('input[name="edd_options[price_id][]"]:checked').val())) : d.push(o.data("downloadId")), void 0 !== (n = a.find('input[name="edd_download_quantity"]').val()) ? s.push(n) : s.push(1)), v.each(d, function(e, o) {
+					var t, n = parseInt(s[e]),
+						a = o.toString().split("_", 2);
+					2 === a.length && (o = a[0], t = a[1]), g.onEddAddToCartOnButtonEvent(o, t, n), w.onEddAddToCartOnButtonEvent(o, t, n), h.onEddAddToCartOnButtonEvent(o, t, n), c.onEddAddToCartOnButtonEvent(o, t, n)
+				})
+			}), d.edd.removeFromCartEnabled && v("form#edd_checkout_cart_form .edd_cart_remove_item_btn").click(function(e) {
+				var o = v(this).attr("href"),
+					t = o.substring(o.indexOf("=") + 1).charAt(0);
+				if (window.pysEddRemoveFromCartData = window.pysEddRemoveFromCartData || [], window.pysEddRemoveFromCartData[t]) {
+					var n = window.pysEddRemoveFromCartData[t];
+					g.onEddRemoveFromCartEvent(n), w.onEddRemoveFromCartEvent(n), h.onEddRemoveFromCartEvent(n), c.onEddRemoveFromCartEvent(n)
+				}
+			})), y.setupURLClickEvents(), d.commentEventEnabled && v("form.comment-form").submit(function() {
+				g.onCommentEvent(), w.onCommentEvent(), h.onCommentEvent(), c.onCommentEvent()
+			}), d.formEventEnabled && (v(document).onFirst("submit", "form", function() {
+				var e = v(this);
+				if (!e.hasClass("comment-form") && !e.hasClass("search-form") && "adminbarsearch" !== e.attr("id") && !(e.hasClass("woocommerce-product-search") || e.hasClass("cart") || e.hasClass("woocommerce-cart-form") || e.hasClass("woocommerce-shipping-calculator") || e.hasClass("checkout") || e.hasClass("checkout_coupon") || e.hasClass("edd_form") || e.hasClass("edd_download_purchase_form"))) {
+					var o = {
+						form_id: e.attr("id"),
+						form_class: e.attr("class")
+					};
+					g.onFormEvent(o), w.onFormEvent(o), h.onFormEvent(o), c.onFormEvent(o)
+				}
