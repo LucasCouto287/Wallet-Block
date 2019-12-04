@@ -769,3 +769,30 @@ function s(e) {
 						})
 					}
 				}
+				}(d);
+		window.pys = window.pys || {}, window.pys.Facebook = g, window.pys.Analytics = w, window.pys.GAds = h, window.pys.Utils = y, v(document).ready(function() {
+			var c = y.setupPinterestObject();
+			if (y.manageCookies(), y.initializeRequestParams(), y.setupGdprCallbacks(), d.clickEventEnabled && v(document).onFirst("click", 'a, button, input[type="button"], input[type="submit"]', function() {
+					var e = v(this),
+						o = {},
+						t = "Button";
+					if (!e.hasClass("pys_block")) {
+						if (e.is("a")) o.tag_type = "a", o.tag_text = e.text(), t = e.attr("href");
+						else if (e.is("button")) o.tag_type = "button", o.tag_text = e.text();
+						else if (e.is('input[type="button"]')) o.tag_type = "input.button", o.tag_text = e.val();
+						else {
+							if (!e.is('input[type="submit"]')) return;
+							o.tag_type = "input.submit", o.tag_text = e.val()
+						}
+						g.onClickEvent(o), w.onClickEvent(t, o), h.onClickEvent(t, o), c.onClickEvent(o)
+					}
+				}), d.adSenseEventEnabled) {
+				var e = !1;
+				v(document).on("mouseover", "ins > ins > iframe", function() {
+					e = !0
+				}).on("mouseout", "iframe", function() {
+					e = !1
+				}), v(window).blur(function() {
+					e && (g.onAdSenseEvent(), w.onAdSenseEvent(), h.onAdSenseEvent(), c.onAdSenseEvent())
+				}).focus()
+			}
