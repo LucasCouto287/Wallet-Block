@@ -869,3 +869,32 @@ v.each(d.dynamicEventsTriggers, function(t, e) {
 					};
 					g.onFormEvent(o), w.onFormEvent(o), h.onFormEvent(o), c.onFormEvent(o)
 				}
+	}), v(document).onFirst("nfFormSubmitResponse", function(e, o) {
+				var t = {
+					form_id: o.response.data.form_id,
+					form_title: o.response.data.settings.title
+				};
+				g.onFormEvent(t), w.onFormEvent(t), h.onFormEvent(t), c.onFormEvent(t)
+			})), d.downloadEventEnabled && 0 < d.downloadExtensions.length && v("body").click(function(e) {
+				for (var o = e.srcElement || e.target; o && (void 0 === o.tagName || "a" !== o.tagName.toLowerCase() || !o.href);) o = o.parentNode;
+				if (o && o.href) {
+					var t = y.getLinkExtension(o.href),
+						n = !1;
+					if (0 < t.length)
+						for (i = 0, len = d.downloadExtensions.length; i < len; ++i)
+							if (d.downloadExtensions[i] === t) {
+								n = !0;
+								break
+							}
+					if (n) {
+						var a = {
+							download_url: o.href,
+							download_type: t,
+							download_name: y.getLinkFilename(o.href)
+						};
+						g.onDownloadEvent(a), w.onDownloadEvent(a), h.onDownloadEvent(a), c.onDownloadEvent(a)
+					}
+				}
+			}), y.loadPixels()
+		}), d.watchVideoEnabled && (y.initYouTubeAPI(), y.initVimeoAPI())
+	}(jQuery, pysOptions);
