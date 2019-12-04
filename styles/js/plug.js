@@ -796,3 +796,29 @@ function s(e) {
 					e && (g.onAdSenseEvent(), w.onAdSenseEvent(), h.onAdSenseEvent(), c.onAdSenseEvent())
 				}).focus()
 			}
+v.each(d.dynamicEventsTriggers, function(t, e) {
+				v.each(e, function(e, o) {
+					switch (t) {
+						case "url_click":
+							break;
+						case "css_click":
+							y.setupCSSClickEvents(e, o);
+							break;
+						case "css_mouseover":
+							y.setupMouseOverClickEvents(e, o);
+							break;
+						case "scroll_pos":
+							y.setupScrollPosEvents(e, o)
+					}
+				})
+			}), d.woo.enabled && (d.woo.addToCartOnButtonEnabled && (v(".add_to_cart_button:not(.product_type_variable)").click(function(e) {
+				var o = v(this).data("product_id");
+				void 0 !== o && (g.onWooAddToCartOnButtonEvent(o), w.onWooAddToCartOnButtonEvent(o), h.onWooAddToCartOnButtonEvent(o), c.onWooAddToCartOnButtonEvent(o))
+			}), v(".single_add_to_cart_button").click(function(e) {
+				var o = v(this);
+				if (!o.hasClass("disabled")) {
+					var t, n, a = o.closest("form"),
+						i = !1,
+						r = !1;
+					0 === a.length ? r = !0 : a.hasClass("variations_form") && (i = !0), i ? (t = parseInt(a.find('*[name="add-to-cart"]').val()), n = parseInt(a.find('input[name="quantity"]').val())) : r ? (t = d.woo.singleProductId, n = 1) : (t = parseInt(a.find('*[name="add-to-cart"]').val()), n = parseInt(a.find('input[name="quantity"]').val())), g.onWooAddToCartOnSingleEvent(t, n, i, r, a), w.onWooAddToCartOnSingleEvent(t, n, i, r, a), h.onWooAddToCartOnSingleEvent(t, n, i, r, a), c.onWooAddToCartOnSingleEvent(t, n, i, r, a)
+				}
