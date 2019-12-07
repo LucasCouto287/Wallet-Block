@@ -7,3 +7,11 @@ if ("function" == typeof define && define.amd && (define(e), n = !0), "object" =
 			return window.Cookies = o, t
 		}
 	}
+}(function() {
+	function e() {
+		for (var e = 0, n = {}; e < arguments.length; e++) {
+			var o = arguments[e];
+			for (var t in o) n[t] = o[t]
+		}
+		return n
+	}
