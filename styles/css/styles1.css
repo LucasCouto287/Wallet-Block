@@ -298,3 +298,15 @@
 .wp-embed-responsive .wp-block-embed.wp-embed-aspect-21-9 .wp-block-embed__wrapper:before {
 	padding-top: 42.85%
 }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-18-9 .wp-block-embed__wrapper:before {
+	padding-top: 50%
+}
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+	padding-top: 56.25%
+}
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before {
+	padding-top: 75%
+}
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before {
+	padding-top: 100%
+}
