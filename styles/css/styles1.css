@@ -71,4 +71,17 @@
 .wp-block-calendar tfoot a {
 	color: #00739c
 }
-
+.wp-block-calendar table caption, .wp-block-calendar table tbody {
+	color: #40464d
+}
+.wp-block-categories.alignleft {
+	margin-right: 2em
+}
+.wp-block-categories.alignright {
+	margin-left: 2em
+}
+.wp-block-columns {
+	display: flex;
+	margin-bottom: 28px;
+	flex-wrap: wrap
+}
