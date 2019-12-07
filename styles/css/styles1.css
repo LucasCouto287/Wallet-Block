@@ -160,3 +160,23 @@
 		background-attachment: scroll
 	}
 }
+.wp-block-cover-image.has-background-dim:before, .wp-block-cover.has-background-dim:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: inherit;
+	opacity: .5;
+	z-index: 1
+}
+.wp-block-cover-image.has-background-dim.has-background-dim-10:before, .wp-block-cover.has-background-dim.has-background-dim-10:before {
+	opacity: .1
+}
+.wp-block-cover-image.has-background-dim.has-background-dim-20:before, .wp-block-cover.has-background-dim.has-background-dim-20:before {
+	opacity: .2
+}
+.wp-block-cover-image.has-background-dim.has-background-dim-30:before, .wp-block-cover.has-background-dim.has-background-dim-30:before {
+	opacity: .3
+}
