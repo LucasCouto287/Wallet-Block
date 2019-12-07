@@ -85,3 +85,28 @@
 	margin-bottom: 28px;
 	flex-wrap: wrap
 }
+@media (min-width:782px) {
+	.wp-block-columns {
+		flex-wrap: nowrap
+	}
+}
+.wp-block-column {
+	flex-grow: 1;
+	min-width: 0;
+	word-break: break-word;
+	overflow-wrap: break-word
+}
+@media (max-width:599px) {
+	.wp-block-column {
+		flex-basis: 100%!important
+	}
+}
+@media (min-width:600px) {
+	.wp-block-column {
+		flex-basis: calc(50% - 16px);
+		flex-grow: 0
+	}
+	.wp-block-column:nth-child(2n) {
+		margin-left: 32px
+	}
+}
