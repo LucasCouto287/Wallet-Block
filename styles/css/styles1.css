@@ -310,3 +310,15 @@
 .wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-1 .wp-block-embed__wrapper:before {
 	padding-top: 100%
 }
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-9-16 .wp-block-embed__wrapper:before {
+	padding-top: 177.78%
+}
+.wp-embed-responsive .wp-block-embed.wp-embed-aspect-1-2 .wp-block-embed__wrapper:before {
+	padding-top: 200%
+}
+.wp-block-file {
+	margin-bottom: 1.5em
+}
+.wp-block-file.aligncenter {
+	text-align: center
+}
