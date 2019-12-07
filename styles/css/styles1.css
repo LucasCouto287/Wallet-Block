@@ -110,3 +110,17 @@
 		margin-left: 32px
 	}
 }
+@media (min-width:782px) {
+	.wp-block-column:not(:first-child) {
+		margin-left: 32px
+	}
+}
+.wp-block-columns.are-vertically-aligned-top {
+	align-items: flex-start
+}
+.wp-block-columns.are-vertically-aligned-center {
+	align-items: center
+}
+.wp-block-columns.are-vertically-aligned-bottom {
+	align-items: flex-end
+}
