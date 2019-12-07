@@ -134,3 +134,29 @@
 .wp-block-column.is-vertically-aligned-bottom {
 	align-self: flex-end
 }
+.wp-block-cover, .wp-block-cover-image {
+	position: relative;
+	background-color: #000;
+	background-size: cover;
+	background-position: 50%;
+	min-height: 430px;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden
+}
+.wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax {
+	background-attachment: fixed
+}
+@supports (-webkit-overflow-scrolling:touch) {
+	.wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax {
+		background-attachment: scroll
+	}
+}
+@media (prefers-reduced-motion:reduce) {
+	.wp-block-cover-image.has-parallax, .wp-block-cover.has-parallax {
+		background-attachment: scroll
+	}
+}
