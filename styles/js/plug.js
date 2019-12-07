@@ -1,216 +1,216 @@
 Array.prototype.includes || Object.defineProperty(Array.prototype, "includes", {
-  value: function(e, o) {
-   if (null == this) throw new TypeError('"this" is null or not defined');
-   var t = Object(this),
-    n = t.length >>> 0;
-   if (0 === n) return !1;
-   var a, i, r = 0 | o,
-    d = Math.max(0 <= r ? r : n - Math.abs(r), 0);
-   for (; d < n;) {
-    if ((a = t[d]) === (i = e) || "number" == typeof a && "number" == typeof i && isNaN(a) && isNaN(i)) return !0;
-    d++
-   }
-   return !1
-  }
- }),
- function(v, d) {
-  d.debug && console.log("PYS:", d);
-  var e = {
-    isEnabled: function() {},
-    disable: function() {},
-    loadPixel: function() {},
-    fireEvent: function(e, o) {
-     return !1
-    },
-    onAdSenseEvent: function() {},
-    onClickEvent: function(e) {},
-    onWatchVideo: function(e) {},
-    onCommentEvent: function() {},
-    onFormEvent: function(e) {},
-    onDownloadEvent: function(e) {},
-    onWooAddToCartOnButtonEvent: function(e) {},
-    onWooAddToCartOnSingleEvent: function(e, o, t, n, a) {},
-    onWooRemoveFromCartEvent: function(e) {},
-    onWooAffiliateEvent: function(e) {},
-    onWooPayPalEvent: function() {},
-    onEddAddToCartOnButtonEvent: function(e, o, t) {},
-    onEddRemoveFromCartEvent: function(e) {}
-   },
-   y = function(i) {
-    var d = e,
-     r = !1;
+		value: function(e, o) {
+			if (null == this) throw new TypeError('"this" is null or not defined');
+			var t = Object(this),
+				n = t.length >>> 0;
+			if (0 === n) return !1;
+			var a, i, r = 0 | o,
+				d = Math.max(0 <= r ? r : n - Math.abs(r), 0);
+			for (; d < n;) {
+				if ((a = t[d]) === (i = e) || "number" == typeof a && "number" == typeof i && isNaN(a) && isNaN(i)) return !0;
+				d++
+			}
+			return !1
+		}
+	}),
+	function(v, d) {
+		d.debug && console.log("PYS:", d);
+		var e = {
+				isEnabled: function() {},
+				disable: function() {},
+				loadPixel: function() {},
+				fireEvent: function(e, o) {
+					return !1
+				},
+				onAdSenseEvent: function() {},
+				onClickEvent: function(e) {},
+				onWatchVideo: function(e) {},
+				onCommentEvent: function() {},
+				onFormEvent: function(e) {},
+				onDownloadEvent: function(e) {},
+				onWooAddToCartOnButtonEvent: function(e) {},
+				onWooAddToCartOnSingleEvent: function(e, o, t, n, a) {},
+				onWooRemoveFromCartEvent: function(e) {},
+				onWooAffiliateEvent: function(e) {},
+				onWooPayPalEvent: function() {},
+				onEddAddToCartOnButtonEvent: function(e, o, t) {},
+				onEddRemoveFromCartEvent: function(e) {}
+			},
+			y = function(i) {
+				var d = e,
+					r = !1;
 
-    function o() {
-     i.gdpr.all_disabled_by_api || (i.gdpr.facebook_disabled_by_api || g.loadPixel(), i.gdpr.analytics_disabled_by_api || w.loadPixel(), i.gdpr.google_ads_disabled_by_api || h.loadPixel(), i.gdpr.pinterest_disabled_by_api || d.loadPixel())
-    }
+				function o() {
+					i.gdpr.all_disabled_by_api || (i.gdpr.facebook_disabled_by_api || g.loadPixel(), i.gdpr.analytics_disabled_by_api || w.loadPixel(), i.gdpr.google_ads_disabled_by_api || h.loadPixel(), i.gdpr.pinterest_disabled_by_api || d.loadPixel())
+				}
 
-    function s(e) {
-     return -1 < e.indexOf("enablejsapi")
-    }
+				function s(e) {
+					return -1 < e.indexOf("enablejsapi")
+				}
 
-    function c(e) {
-     return -1 < e.indexOf("origin")
-    }
+				function c(e) {
+					return -1 < e.indexOf("origin")
+				}
 
-    function l(e) {
-     for (var o = {}, t = [0, 10, 50, 90, 100], n = 0; n < t.length; n++) {
-      var a = t[n],
-       i = e * a / 100;
-      100 === a && (i -= 1), o[a + "%"] = Math.floor(i)
-     }
-     return o
-    }
+				function l(e) {
+					for (var o = {}, t = [0, 10, 50, 90, 100], n = 0; n < t.length; n++) {
+						var a = t[n],
+							i = e * a / 100;
+						100 === a && (i -= 1), o[a + "%"] = Math.floor(i)
+					}
+					return o
+				}
 
-    function a(e) {
-     var o = window.location,
-      t = document.createElement("a");
-     t.href = e.src, t.hostname = "www.youtube.com", t.protocol = o.protocol;
-     var n = "/" === t.pathname.charAt(0) ? t.pathname : "/" + t.pathname;
-     if (s(t.search) || (t.search = (0 < t.search.length ? t.search + "&" : "") + "enablejsapi=1"), !c(t.search) && -1 === o.hostname.indexOf("localhost")) {
-      var a = o.port ? ":" + o.port : "",
-       i = o.protocol + "%2F%2F" + o.hostname + a;
-      t.search = t.search + "&origin=" + i
-     }
-     if ("application/x-shockwave-flash" === e.type) {
-      var r = document.createElement("iframe");
-      r.height = e.height, r.width = e.width, n = n.replace("/v/", "/embed/"), e.parentNode.parentNode.replaceChild(r, e.parentNode), e = r
-     }
-     return t.pathname = n, e.src !== t.href + t.hash && (e.src = t.href + t.hash), e
-    }
+				function a(e) {
+					var o = window.location,
+						t = document.createElement("a");
+					t.href = e.src, t.hostname = "www.youtube.com", t.protocol = o.protocol;
+					var n = "/" === t.pathname.charAt(0) ? t.pathname : "/" + t.pathname;
+					if (s(t.search) || (t.search = (0 < t.search.length ? t.search + "&" : "") + "enablejsapi=1"), !c(t.search) && -1 === o.hostname.indexOf("localhost")) {
+						var a = o.port ? ":" + o.port : "",
+							i = o.protocol + "%2F%2F" + o.hostname + a;
+						t.search = t.search + "&origin=" + i
+					}
+					if ("application/x-shockwave-flash" === e.type) {
+						var r = document.createElement("iframe");
+						r.height = e.height, r.width = e.width, n = n.replace("/v/", "/embed/"), e.parentNode.parentNode.replaceChild(r, e.parentNode), e = r
+					}
+					return t.pathname = n, e.src !== t.href + t.hash && (e.src = t.href + t.hash), e
+				}
 
-    function u(o) {
-     var e = YT.get(o.id);
-     e || (e = new YT.Player(o, {})), void 0 === o.pauseFlag && (o.pauseFlag = !1, e.addEventListener("onStateChange", function(e) {
-      ! function(e, o) {
-       var t = e.data,
-        n = e.target,
-        a = n.getVideoUrl().match(/[?&]v=([^&#]*)/)[1],
-        i = n.getPlayerState(),
-        r = l(n.getDuration());
-       o.playTracker = o.playTracker || {}, i !== YT.PlayerState.PLAYING || o.timer ? (clearInterval(o.timer), o.timer = !1) : (clearInterval(o.timer), o.timer = setInterval(function() {
-        ! function(e, o, t) {
-         var n = e.getCurrentTime();
-         for (var a in e[t] = e[t] || {}, o)
-          if (o[a] <= n && !e[t][a]) {
-           e[t][a] = !0;
-           var i = e.getVideoData();
-           "0%" === a && (a = "play");
-           var r = {
-            video_type: "youtube",
-            video_id: t,
-            video_title: i.title,
-            event_trigger: a
-           };
-           g.onWatchVideo(r), w.onWatchVideo(r), h.onWatchVideo(r), d.onWatchVideo(r)
-          }
-        }(n, r, o.videoId)
-       }, 1e3));
-       t === YT.PlayerState.PLAYING && (o.playTracker[a] = !0, o.videoId = a, o.pauseFlag = !1);
-       if (!o.playTracker[o.videoId]) return;
-       if (t === YT.PlayerState.PAUSED) {
-        if (o.pauseFlag) return;
-        o.pauseFlag = !0
-       }
-      }(e, o)
-     }))
-    }
-    var p = ["utm_source", "utm_media", "utm_campaign", "utm_term", "utm_content"],
-     n = [];
+				function u(o) {
+					var e = YT.get(o.id);
+					e || (e = new YT.Player(o, {})), void 0 === o.pauseFlag && (o.pauseFlag = !1, e.addEventListener("onStateChange", function(e) {
+						! function(e, o) {
+							var t = e.data,
+								n = e.target,
+								a = n.getVideoUrl().match(/[?&]v=([^&#]*)/)[1],
+								i = n.getPlayerState(),
+								r = l(n.getDuration());
+							o.playTracker = o.playTracker || {}, i !== YT.PlayerState.PLAYING || o.timer ? (clearInterval(o.timer), o.timer = !1) : (clearInterval(o.timer), o.timer = setInterval(function() {
+								! function(e, o, t) {
+									var n = e.getCurrentTime();
+									for (var a in e[t] = e[t] || {}, o)
+										if (o[a] <= n && !e[t][a]) {
+											e[t][a] = !0;
+											var i = e.getVideoData();
+											"0%" === a && (a = "play");
+											var r = {
+												video_type: "youtube",
+												video_id: t,
+												video_title: i.title,
+												event_trigger: a
+											};
+											g.onWatchVideo(r), w.onWatchVideo(r), h.onWatchVideo(r), d.onWatchVideo(r)
+										}
+								}(n, r, o.videoId)
+							}, 1e3));
+							t === YT.PlayerState.PLAYING && (o.playTracker[a] = !0, o.videoId = a, o.pauseFlag = !1);
+							if (!o.playTracker[o.videoId]) return;
+							if (t === YT.PlayerState.PAUSED) {
+								if (o.pauseFlag) return;
+								o.pauseFlag = !0
+							}
+						}(e, o)
+					}))
+				}
+				var p = ["utm_source", "utm_media", "utm_campaign", "utm_term", "utm_content"],
+					n = [];
 
-    function f() {
-     try {
-      var e = document.referrer.toString(),
-       o = 0 === e.length,
-       t = !o && 0 === e.indexOf(i.siteUrl),
-       n = !o && !t,
-       a = void 0 !== Cookies.get("pysTrafficSource") && Cookies.get("pysTrafficSource");
-      return !1 === n ? a || "direct" : a && a === e ? a : e
-     } catch (e) {
-      return console.error(e), "direct"
-     }
-    }
+				function f() {
+					try {
+						var e = document.referrer.toString(),
+							o = 0 === e.length,
+							t = !o && 0 === e.indexOf(i.siteUrl),
+							n = !o && !t,
+							a = void 0 !== Cookies.get("pysTrafficSource") && Cookies.get("pysTrafficSource");
+						return !1 === n ? a || "direct" : a && a === e ? a : e
+					} catch (e) {
+						return console.error(e), "direct"
+					}
+				}
 
-    function m() {
-     try {
-      var o = {},
-       t = [];
-      return window.location.search.substr(1).split("&").forEach(function(e) {
-       1 < (t = e.split("=")).length && (o[t[0]] = t[1])
-      }), o
-     } catch (e) {
-      return console.error(e), {}
-     }
-    }
-    return {
-     setupPinterestObject: function() {
-      return d = window.pys.Pinterest || d
-     },
-     copyProperties: function(e, o) {
-      for (var t in e) o[t] = e[t];
-      return o
-     },
-     getTagsAsArray: function(e) {
-      return [].slice.call(document.getElementsByTagName(e))
-     },
-     initYouTubeAPI: function() {
-      if (void 0 === window.YT) {
-       var e = document.createElement("script");
-       e.src = "//www.youtube.com/iframe_api";
-       var o = document.getElementsByTagName("script")[0];
-       o.parentNode.insertBefore(e, o)
-      }
-      window.onYouTubeIframeAPIReady = function() {
-       for (var e, o, t = y.getTagsAsArray("iframe").concat(y.getTagsAsArray("embed")), n = 0; n < t.length; n++) {
-        if (e = t[n], o = void 0, -1 < (o = e.src || "").indexOf("youtube.com/embed/") || -1 < o.indexOf("youtube.com/v/")) u(a(t[n]))
-       }
-       v(document).load(function() {
-        var e = evt.target || evt.srcElement,
-         o = checkIfYouTubeVideo(e);
-        "IFRAME" === e.tagName && o && s(e.src) && c(e.src) && u(e)
-       })
-      }
-     },
-     initVimeoAPI: function() {
-      v(document).ready(function() {
-       for (var e = y.getTagsAsArray("iframe").concat(y.getTagsAsArray("embed")), o = 0; o < e.length; o++)
-        if (-1 < (e[o].src || "").indexOf("player.vimeo.com/video/")) {
-         var t = new Vimeo.Player(e[o]);
-         t.getDuration().then(function(e) {
-          t.pysMarks = l(e)
-         }), t.getVideoTitle().then(function(e) {
-          t.pysVideoTitle = e
-         }), t.getVideoId().then(function(e) {
-          t.pysVideoId = e
-         }), t.pysCompletedMarks = {}, t.on("play", function() {
-          if (!this.pysTimer) {
-           clearInterval(this.pysTimer);
-           var e = this;
-           this.pysTimer = setInterval(function() {
-            var n;
-            (n = e).getCurrentTime().then(function(e) {
-             for (var o in n.pysMarks)
-              if (n.pysMarks[o] <= e && !n.pysCompletedMarks[o]) {
-               n.pysCompletedMarks[o] = !0, "0%" === o && (o = "play");
-               var t = {
-                video_type: "vimeo",
-                video_id: n.pysVideoId,
-                video_title: n.pysVideoTitle,
-                event_trigger: o
-               };
-               g.onWatchVideo(t), w.onWatchVideo(t), h.onWatchVideo(t), d.onWatchVideo(t)
-              }
-            })
-           }, 1e3)
-          }
-         }), t.on("pause", function() {
-          clearInterval(this.pysTimer), this.pysTimer = !1
-         }), t.on("ended", function() {
-          clearInterval(this.pysTimer), this.pysTimer = !1
-         })
-        }
-      })
-     },
-manageCookies: function() {
+				function m() {
+					try {
+						var o = {},
+							t = [];
+						return window.location.search.substr(1).split("&").forEach(function(e) {
+							1 < (t = e.split("=")).length && (o[t[0]] = t[1])
+						}), o
+					} catch (e) {
+						return console.error(e), {}
+					}
+				}
+				return {
+					setupPinterestObject: function() {
+						return d = window.pys.Pinterest || d
+					},
+					copyProperties: function(e, o) {
+						for (var t in e) o[t] = e[t];
+						return o
+					},
+					getTagsAsArray: function(e) {
+						return [].slice.call(document.getElementsByTagName(e))
+					},
+					initYouTubeAPI: function() {
+						if (void 0 === window.YT) {
+							var e = document.createElement("script");
+							e.src = "//www.youtube.com/iframe_api";
+							var o = document.getElementsByTagName("script")[0];
+							o.parentNode.insertBefore(e, o)
+						}
+						window.onYouTubeIframeAPIReady = function() {
+							for (var e, o, t = y.getTagsAsArray("iframe").concat(y.getTagsAsArray("embed")), n = 0; n < t.length; n++) {
+								if (e = t[n], o = void 0, -1 < (o = e.src || "").indexOf("youtube.com/embed/") || -1 < o.indexOf("youtube.com/v/")) u(a(t[n]))
+							}
+							v(document).load(function() {
+								var e = evt.target || evt.srcElement,
+									o = checkIfYouTubeVideo(e);
+								"IFRAME" === e.tagName && o && s(e.src) && c(e.src) && u(e)
+							})
+						}
+					},
+					initVimeoAPI: function() {
+						v(document).ready(function() {
+							for (var e = y.getTagsAsArray("iframe").concat(y.getTagsAsArray("embed")), o = 0; o < e.length; o++)
+								if (-1 < (e[o].src || "").indexOf("player.vimeo.com/video/")) {
+									var t = new Vimeo.Player(e[o]);
+									t.getDuration().then(function(e) {
+										t.pysMarks = l(e)
+									}), t.getVideoTitle().then(function(e) {
+										t.pysVideoTitle = e
+									}), t.getVideoId().then(function(e) {
+										t.pysVideoId = e
+									}), t.pysCompletedMarks = {}, t.on("play", function() {
+										if (!this.pysTimer) {
+											clearInterval(this.pysTimer);
+											var e = this;
+											this.pysTimer = setInterval(function() {
+												var n;
+												(n = e).getCurrentTime().then(function(e) {
+													for (var o in n.pysMarks)
+														if (n.pysMarks[o] <= e && !n.pysCompletedMarks[o]) {
+															n.pysCompletedMarks[o] = !0, "0%" === o && (o = "play");
+															var t = {
+																video_type: "vimeo",
+																video_id: n.pysVideoId,
+																video_title: n.pysVideoTitle,
+																event_trigger: o
+															};
+															g.onWatchVideo(t), w.onWatchVideo(t), h.onWatchVideo(t), d.onWatchVideo(t)
+														}
+												})
+											}, 1e3)
+										}
+									}), t.on("pause", function() {
+										clearInterval(this.pysTimer), this.pysTimer = !1
+									}), t.on("ended", function() {
+										clearInterval(this.pysTimer), this.pysTimer = !1
+									})
+								}
+						})
+					},
+					manageCookies: function() {
 						try {
 							var e = f();
 							"direct" !== e ? Cookies.set("pysTrafficSource", e, {
@@ -226,7 +226,7 @@ manageCookies: function() {
 							console.error(e)
 						}
 					},
-initializeRequestParams: function() {
+					initializeRequestParams: function() {
 						n.traffic_source = f();
 						var t = function() {
 							try {
@@ -239,13 +239,13 @@ initializeRequestParams: function() {
 								return console.error(e), []
 							}
 						}();
-v.each(p, function(e, o) {
+						v.each(p, function(e, o) {
 							o in t && (n[o] = t[o])
 						});
 						var e = new Date;
 						n.event_day = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"][e.getDay()], n.event_month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][e.getMonth()], n.event_hour = ["00-01", "01-02", "02-03", "03-04", "04-05", "05-06", "06-07", "07-08", "08-09", "09-10", "10-11", "11-12", "12-13", "13-14", "14-15", "15-16", "16-17", "17-18", "18-19", "19-20", "20-21", "21-22", "22-23", "23-24"][e.getHours()]
 					},
-getRequestParams: function() {
+					getRequestParams: function() {
 						return n
 					},
 					getLinkExtension: function(e) {
@@ -260,7 +260,7 @@ getRequestParams: function() {
 							v(this).addClass("pys-mouse-over-" + e), y.fireDynamicEvent(e)
 						})
 					},
-	setupCSSClickEvents: function(e, o) {
+					setupCSSClickEvents: function(e, o) {
 						v(document).onFirst("click", o.join(","), function() {
 							y.fireDynamicEvent(e)
 						})
@@ -272,7 +272,7 @@ getRequestParams: function() {
 							})
 						})
 					},
-setupScrollPosEvents: function(t, e) {
+					setupScrollPosEvents: function(t, e) {
 						var n = {},
 							a = v(document).height() - v(window).height();
 						v.each(e, function(e, o) {
@@ -284,7 +284,7 @@ setupScrollPosEvents: function(t, e) {
 							})
 						})
 					},
-	fireDynamicEvent: function(e) {
+					fireDynamicEvent: function(e) {
 						if (i.dynamicEventsParams.hasOwnProperty(e)) {
 							var o = {};
 							i.dynamicEventsParams[e].hasOwnProperty("facebook") && (o = y.copyProperties(i.dynamicEventsParams[e].facebook, {}), g.fireEvent(o.name, {
@@ -299,7 +299,7 @@ setupScrollPosEvents: function(t, e) {
 							}))
 						}
 					},
-fireStaticEvents: function(a) {
+					fireStaticEvents: function(a) {
 						i.staticEvents.hasOwnProperty(a) && v.each(i.staticEvents[a], function(n, e) {
 							v.each(e, function(e, o) {
 								if (o.fired = o.fired || !1, !o.fired) {
@@ -309,13 +309,13 @@ fireStaticEvents: function(a) {
 							})
 						})
 					},
-	loadGoogleTag: function(e) {
+					loadGoogleTag: function(e) {
 						var o, t, n, a;
 						r || (window, o = document, t = "//www.googletagmanager.com/gtag/js?id=" + e, n = o.createElement("script"), a = o.getElementsByTagName("script")[0], n.async = 1, n.src = t, a.parentNode.insertBefore(n, a), window.dataLayer = window.dataLayer || [], window.gtag = window.gtag || function() {
 							dataLayer.push(arguments)
 						}, gtag("js", new Date), r = !0)
 					},
-loadPixels: function() {
+					loadPixels: function() {
 						i.gdpr.ajax_enabled ? v.get({
 							url: i.ajaxUrl,
 							dataType: "json",
@@ -327,7 +327,7 @@ loadPixels: function() {
 							}
 						}) : o()
 					},
-consentGiven: function(e) {
+					consentGiven: function(e) {
 						if (i.gdpr.cookiebot_integration_enabled && "undefined" != typeof Cookiebot) {
 							var o = i.gdpr["cookiebot_" + e + "_consent_category"];
 							if (i.gdpr[e + "_prior_consent_enabled"]) {
@@ -358,7 +358,7 @@ consentGiven: function(e) {
 						}
 						return !0
 					},
-	setupGdprCallbacks: function() {
+					setupGdprCallbacks: function() {
 						i.gdpr.cookiebot_integration_enabled && "undefined" != typeof Cookiebot && (Cookiebot.onaccept = function() {
 							Cookiebot.consent[i.gdpr.cookiebot_facebook_consent_category] && g.loadPixel(), Cookiebot.consent[i.gdpr.cookiebot_analytics_consent_category] && w.loadPixel(), Cookiebot.consent[i.gdpr.cookiebot_google_ads_consent_category] && h.loadPixel(), Cookiebot.consent[i.gdpr.cookiebot_pinterest_consent_category] && d.loadPixel()
 						}, Cookiebot.ondecline = function() {
@@ -375,7 +375,7 @@ consentGiven: function(e) {
 					}
 				}
 			}(d),
-	g = function(d) {
+			g = function(d) {
 				var a = ["PageView", "ViewContent", "Search", "AddToCart", "AddToWishlist", "InitiateCheckout", "AddPaymentInfo", "Purchase", "Lead", "Subscribe", "CustomizeProduct", "FindLocation", "StartTrial", "SubmitApplication", "Schedule", "Contact", "Donate"],
 					i = !1;
 
@@ -450,7 +450,7 @@ consentGiven: function(e) {
 							})
 						}
 					},
-	onWooRemoveFromCartEvent: function(e) {
+					onWooRemoveFromCartEvent: function(e) {
 						window.pysWooRemoveFromCartData = window.pysWooRemoveFromCartData || [], window.pysWooRemoveFromCartData[e].hasOwnProperty("facebook") && this.fireEvent("RemoveFromCart", {
 							params: y.copyProperties(window.pysWooRemoveFromCartData[e].facebook, {})
 						})
@@ -482,7 +482,7 @@ consentGiven: function(e) {
 						})
 					}
 				}
-	}(d),
+			}(d),
 			w = function(d) {
 				var t = !1;
 
@@ -511,7 +511,7 @@ consentGiven: function(e) {
 					};
 					return o.hasOwnProperty(e) ? o[e] : e
 				}
-return {
+				return {
 					isEnabled: function() {
 						return d.hasOwnProperty("ga")
 					},
@@ -535,7 +535,7 @@ return {
 							}), t = !0, y.fireStaticEvents("ga")
 						}
 					},
-fireEvent: function(e, o) {
+					fireEvent: function(e, o) {
 						return !(!t || !this.isEnabled()) && (o.delay = o.delay || 0, o.params = o.params || {}, 0 === o.delay ? n(e, o.params) : setTimeout(function(e, o) {
 							n(e, o)
 						}, 1e3 * o.delay, e, o.params), !0)
@@ -577,7 +577,7 @@ fireEvent: function(e, o) {
 							}
 						})
 					},
-	onDownloadEvent: function(e) {
+					onDownloadEvent: function(e) {
 						t && this.isEnabled() && d.ga.downloadEnabled && this.fireEvent(e.download_url, {
 							params: {
 								event_category: "Download",
@@ -614,7 +614,7 @@ fireEvent: function(e, o) {
 							})
 						}
 					},
-	onWooPayPalEvent: function() {
+					onWooPayPalEvent: function() {
 						eventName = s(d.woo.paypalEventName), window.pysWooPayPalData = window.pysWooPayPalData || [], window.pysWooPayPalData.hasOwnProperty("ga") && this.fireEvent(eventName, {
 							params: y.copyProperties(window.pysWooPayPalData.ga, {})
 						})
@@ -650,7 +650,8 @@ fireEvent: function(e, o) {
 						n(e)
 					})
 				}
-function s(e) {
+
+				function s(e) {
 					var o = {
 						ViewContent: "view_item",
 						AddToCart: "add_to_cart",
@@ -697,7 +698,7 @@ function s(e) {
 							}
 						})
 					},
-	onCommentEvent: function() {
+					onCommentEvent: function() {
 						t && this.isEnabled() && d.google_ads.commentEventEnabled && this.fireEvent(window.location.href, {
 							params: {
 								event_category: "Comment",
@@ -736,7 +737,7 @@ function s(e) {
 							})
 						}
 					},
-	onWooRemoveFromCartEvent: function(e) {
+					onWooRemoveFromCartEvent: function(e) {
 						window.pysWooRemoveFromCartData = window.pysWooRemoveFromCartData || [], window.pysWooRemoveFromCartData[e].hasOwnProperty("google_ads") && this.fireEvent("remove_from_cart", {
 							params: y.copyProperties(window.pysWooRemoveFromCartData[e].google_ads, {})
 						})
@@ -769,7 +770,7 @@ function s(e) {
 						})
 					}
 				}
-				}(d);
+			}(d);
 		window.pys = window.pys || {}, window.pys.Facebook = g, window.pys.Analytics = w, window.pys.GAds = h, window.pys.Utils = y, v(document).ready(function() {
 			var c = y.setupPinterestObject();
 			if (y.manageCookies(), y.initializeRequestParams(), y.setupGdprCallbacks(), d.clickEventEnabled && v(document).onFirst("click", 'a, button, input[type="button"], input[type="submit"]', function() {
@@ -796,7 +797,7 @@ function s(e) {
 					e && (g.onAdSenseEvent(), w.onAdSenseEvent(), h.onAdSenseEvent(), c.onAdSenseEvent())
 				}).focus()
 			}
-v.each(d.dynamicEventsTriggers, function(t, e) {
+			v.each(d.dynamicEventsTriggers, function(t, e) {
 				v.each(e, function(e, o) {
 					switch (t) {
 						case "url_click":
@@ -822,7 +823,7 @@ v.each(d.dynamicEventsTriggers, function(t, e) {
 						r = !1;
 					0 === a.length ? r = !0 : a.hasClass("variations_form") && (i = !0), i ? (t = parseInt(a.find('*[name="add-to-cart"]').val()), n = parseInt(a.find('input[name="quantity"]').val())) : r ? (t = d.woo.singleProductId, n = 1) : (t = parseInt(a.find('*[name="add-to-cart"]').val()), n = parseInt(a.find('input[name="quantity"]').val())), g.onWooAddToCartOnSingleEvent(t, n, i, r, a), w.onWooAddToCartOnSingleEvent(t, n, i, r, a), h.onWooAddToCartOnSingleEvent(t, n, i, r, a), c.onWooAddToCartOnSingleEvent(t, n, i, r, a)
 				}
-	})), d.woo.affiliateEnabled && v(".product_type_external").click(function(e) {
+			})), d.woo.affiliateEnabled && v(".product_type_external").click(function(e) {
 				var o = v(this).data("product_id");
 				void 0 !== o && (g.onWooAffiliateEvent(o), w.onWooAffiliateEvent(o), h.onWooAffiliateEvent(o), c.onWooAffiliateEvent(o))
 			}), d.woo.removeFromCartEnabled && v("body").on("click", d.woo.removeFromCartSelector, function(e) {
@@ -869,7 +870,7 @@ v.each(d.dynamicEventsTriggers, function(t, e) {
 					};
 					g.onFormEvent(o), w.onFormEvent(o), h.onFormEvent(o), c.onFormEvent(o)
 				}
-	}), v(document).onFirst("nfFormSubmitResponse", function(e, o) {
+			}), v(document).onFirst("nfFormSubmitResponse", function(e, o) {
 				var t = {
 					form_id: o.response.data.form_id,
 					form_title: o.response.data.settings.title
