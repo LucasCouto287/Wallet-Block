@@ -34,3 +34,17 @@ if ("undefined" != typeof document) {
 return c
 			}
 		}
+	return t.set = t, t.get = function(e) {
+			return t.call(t, e)
+		}, t.getJSON = function() {
+			return t.apply({
+				json: !0
+			}, [].slice.call(arguments))
+		}, t.defaults = {}, t.remove = function(n, o) {
+			t(n, "", e(o, {
+				expires: -1
+			}))
+		}, t.withConverter = n, t
+	}
+	return n(function() {})
+});
