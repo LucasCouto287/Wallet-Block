@@ -180,3 +180,15 @@
 .wp-block-cover-image.has-background-dim.has-background-dim-30:before, .wp-block-cover.has-background-dim.has-background-dim-30:before {
 	opacity: .3
 }
+.wp-block-cover-image.has-background-dim.has-background-dim-40:before, .wp-block-cover.has-background-dim.has-background-dim-40:before {
+	opacity: .4
+}
+.wp-block-cover-image.has-background-dim.has-background-dim-50:before, .wp-block-cover.has-background-dim.has-background-dim-50:before {
+	opacity: .5
+}
+.wp-block-cover-image.has-background-dim.has-background-dim-60:before, .wp-block-cover.has-background-dim.has-background-dim-60:before {
+	opacity: .6
+}
+.wp-block-cover-image.has-background-dim.has-background-dim-70:before, .wp-block-cover.has-background-dim.has-background-dim-70:before {
+	opacity: .7
+}
