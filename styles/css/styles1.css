@@ -30,3 +30,15 @@
 	text-decoration: none;
 	overflow-wrap: break-word
 }
+.wp-block-button__link:active, .wp-block-button__link:focus, .wp-block-button__link:hover, .wp-block-button__link:visited {
+	color: inherit
+}
+.is-style-squared .wp-block-button__link {
+	border-radius: 0
+}
+.no-border-radius.wp-block-button__link {
+	border-radius: 0!important
+}
+.is-style-outline {
+	color: #32373c
+}
