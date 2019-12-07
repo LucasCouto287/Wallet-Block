@@ -56,3 +56,19 @@
 .wp-block-calendar tfoot td {
 	border: none
 }
+.wp-block-calendar table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif
+}
+.wp-block-calendar table th {
+	font-weight: 400;
+	background: #edeff0
+}
+.wp-block-calendar a {
+	text-decoration: underline
+}
+.wp-block-calendar tfoot a {
+	color: #00739c
+}
+
