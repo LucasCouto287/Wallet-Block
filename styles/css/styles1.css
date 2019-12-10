@@ -925,3 +925,23 @@ p.has-text-color a {
 	justify-content: center;
 	display: flex
 }
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link {
+	background-color: #f0f0f0;
+	color: #444
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-amazon {
+	background-color: #f90;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-bandcamp {
+	background-color: #1ea0c3;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-behance {
+	background-color: #0757fe;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-codepen {
+	background-color: #1e1f26;
+	color: #fff
+}
