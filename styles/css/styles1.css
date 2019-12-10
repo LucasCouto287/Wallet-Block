@@ -504,3 +504,10 @@
 	max-width: 305px;
 	width: 100%
 }
+.blocks-gallery-grid.aligncenter .blocks-gallery-item figure, .wp-block-gallery.aligncenter .blocks-gallery-item figure {
+	justify-content: center
+}
+.wp-block-image {
+	max-width: 100%;
+	margin-bottom: 1em
+}
