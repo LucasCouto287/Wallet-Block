@@ -823,3 +823,19 @@ p.has-text-color a {
 	font-size: 18px;
 	text-align: right
 }
+.wp-block-rss.alignleft {
+	margin-right: 2em
+}
+.wp-block-rss.alignright {
+	margin-left: 2em
+}
+.wp-block-rss.is-grid {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0;
+	list-style: none
+}
+.wp-block-rss.is-grid li {
+	margin: 0 16px 16px 0;
+	width: 100%
+}
