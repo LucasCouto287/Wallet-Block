@@ -511,3 +511,12 @@
 	max-width: 100%;
 	margin-bottom: 1em
 }
+.wp-block-image img {
+	max-width: 100%
+}
+.wp-block-image.aligncenter {
+	text-align: center
+}
+.wp-block-image.alignfull img, .wp-block-image.alignwide img {
+	width: 100%
+}
