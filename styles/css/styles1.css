@@ -997,3 +997,19 @@ p.has-text-color a {
 	background-color: #e21b24;
 	color: #fff
 }
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-linkedin {
+	background-color: #0577b5;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-mastodon {
+	background-color: #3288d4;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-medium {
+	background-color: #02ab6c;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-meetup {
+	background-color: #f6405f;
+	color: #fff
+}
