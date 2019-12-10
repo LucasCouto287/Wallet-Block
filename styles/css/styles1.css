@@ -427,3 +427,7 @@
 			width: calc((100% - 32px)/3 - 1px)
 		}
 	}
+.blocks-gallery-grid.columns-4 .blocks-gallery-image, .blocks-gallery-grid.columns-4 .blocks-gallery-item, .wp-block-gallery.columns-4 .blocks-gallery-image, .wp-block-gallery.columns-4 .blocks-gallery-item {
+		width: calc((100% - 48px)/4);
+		margin-right: 16px
+	}
