@@ -977,3 +977,23 @@ p.has-text-color a {
 	background-color: #e65678;
 	color: #fff
 }
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-github {
+	background-color: #24292d;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-goodreads {
+	background-color: #eceadd;
+	color: #382110
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-google {
+	background-color: #ea4434;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-instagram {
+	background-color: #f00075;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-lastfm {
+	background-color: #e21b24;
+	color: #fff
+}
