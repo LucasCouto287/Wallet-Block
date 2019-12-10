@@ -945,3 +945,19 @@ p.has-text-color a {
 	background-color: #1e1f26;
 	color: #fff
 }
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-deviantart {
+	background-color: #02e49b;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-dribbble {
+	background-color: #e94c89;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-dropbox {
+	background-color: #4280ff;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-etsy {
+	background-color: #f45800;
+	color: #fff
+}
