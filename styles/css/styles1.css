@@ -906,3 +906,22 @@ p.has-text-color a {
 	border-radius: 36px;
 	margin-right: 8px
 }
+.wp-social-link, .wp-social-link a {
+	display: block;
+	transition: transform .1s ease
+}
+.wp-social-link a {
+	padding: 6px;
+	line-height: 0
+}
+.wp-social-link a, .wp-social-link a:active, .wp-social-link a:hover, .wp-social-link a:visited, .wp-social-link svg {
+	color: currentColor;
+	fill: currentColor
+}
+.wp-social-link:hover {
+	transform: scale(1.1)
+}
+.wp-block-social-links.aligncenter {
+	justify-content: center;
+	display: flex
+}
