@@ -770,3 +770,22 @@ p.has-text-color a {
 	margin-right: 0;
 	text-align: center
 }
+.wp-block-pullquote.alignleft, .wp-block-pullquote.alignright {
+	max-width: 305px
+}
+.wp-block-pullquote.alignleft p, .wp-block-pullquote.alignright p {
+	font-size: 20px
+}
+.wp-block-pullquote p {
+	font-size: 28px;
+	line-height: 1.6
+}
+.wp-block-pullquote cite, .wp-block-pullquote footer {
+	position: relative
+}
+.wp-block-pullquote .has-text-color a {
+	color: inherit
+}
+.wp-block-pullquote:not(.is-style-solid-color) {
+	background: none
+}
