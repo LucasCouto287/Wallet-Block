@@ -871,3 +871,38 @@ p.has-text-color a {
 .wp-block-search .wp-block-search__input {
 	flex-grow: 1
 }
+.wp-block-search .wp-block-search__button {
+	margin-left: 10px
+}
+.wp-block-separator.is-style-wide {
+	border-bottom-width: 1px
+}
+.wp-block-separator.is-style-dots {
+	background: none!important;
+	border: none;
+	text-align: center;
+	max-width: none;
+	line-height: 1;
+	height: auto
+}
+.wp-block-separator.is-style-dots:before {
+	content: "\00b7 \00b7 \00b7";
+	color: currentColor;
+	font-size: 20px;
+	letter-spacing: 2em;
+	padding-left: 2em;
+	font-family: serif
+}
+.wp-block-social-links {
+	display: flex;
+	justify-content: flex-start;
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0
+}
+.wp-social-link {
+	width: 36px;
+	height: 36px;
+	border-radius: 36px;
+	margin-right: 8px
+}
