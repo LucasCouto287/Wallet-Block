@@ -636,3 +636,23 @@
 	color: #6c7781;
 	font-size: 13px
 }
+.wp-block-latest-posts__post-excerpt {
+	margin-top: 8px;
+	margin-bottom: 16px
+}
+.wp-block-media-text {
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-rows: auto;
+	grid-template-rows: auto;
+	-ms-grid-columns: 50% 1fr;
+	grid-template-columns: 50% 1fr
+}
+.wp-block-media-text .has-media-on-the-right {
+	-ms-grid-columns: 1fr 50%;
+	grid-template-columns: 1fr 50%
+}
+.wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__content, .wp-block-media-text.is-vertically-aligned-top .wp-block-media-text__media {
+	-ms-grid-row-align: start;
+	align-self: start
+}
