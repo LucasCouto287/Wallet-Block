@@ -578,3 +578,13 @@
 .has-dates .wp-block-latest-comments__comment, .has-excerpts .wp-block-latest-comments__comment {
 	line-height: 1.5
 }
+.wp-block-latest-comments__comment-excerpt p {
+	font-size: 14px;
+	line-height: 1.8;
+	margin: 5px 0 20px
+}
+.wp-block-latest-comments__comment-date {
+	color: #8f98a1;
+	display: block;
+	font-size: 12px
+}
