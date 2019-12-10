@@ -1013,3 +1013,15 @@ p.has-text-color a {
 	background-color: #f6405f;
 	color: #fff
 }
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-pinterest {
+	background-color: #e60122;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-pocket {
+	background-color: #ef4155;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-reddit {
+	background-color: #fe4500;
+	color: #fff
+}
