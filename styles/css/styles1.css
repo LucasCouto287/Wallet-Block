@@ -440,3 +440,8 @@
 		width: calc((100% - 64px)/5);
 		margin-right: 16px
 	}
+@supports (-ms-ime-align:auto) {
+		.blocks-gallery-grid.columns-5 .blocks-gallery-image, .blocks-gallery-grid.columns-5 .blocks-gallery-item, .wp-block-gallery.columns-5 .blocks-gallery-image, .wp-block-gallery.columns-5 .blocks-gallery-item {
+			width: calc((100% - 64px)/5 - 1px)
+		}
+	}
