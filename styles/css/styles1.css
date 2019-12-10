@@ -422,3 +422,8 @@
 		width: calc((100% - 32px)/3);
 		margin-right: 16px
 	}
+@supports (-ms-ime-align:auto) {
+		.blocks-gallery-grid.columns-3 .blocks-gallery-image, .blocks-gallery-grid.columns-3 .blocks-gallery-item, .wp-block-gallery.columns-3 .blocks-gallery-image, .wp-block-gallery.columns-3 .blocks-gallery-item {
+			width: calc((100% - 32px)/3 - 1px)
+		}
+	}
