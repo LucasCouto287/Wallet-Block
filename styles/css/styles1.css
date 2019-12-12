@@ -1152,3 +1152,257 @@ p.has-text-color a {
 .wp-block-social-links.is-style-logos-only .wp-social-link-pocket {
 	color: #ef4155
 }
+.wp-block-social-links.is-style-logos-only .wp-social-link-reddit {
+	color: #fe4500
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-skype {
+	color: #0478d7
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-snapchat {
+	color: #fff;
+	stroke: #000
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-soundcloud {
+	color: #ff5600
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-spotify {
+	color: #1bd760
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-tumblr {
+	color: #011835
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-twitch {
+	color: #6440a4
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-twitter {
+	color: #21a1f3
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-vimeo {
+	color: #1eb7ea
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-vk {
+	color: #4680c2
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-wordpress {
+	color: #3499cd
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-yelp {
+	background-color: #d32422;
+	color: #fff
+}
+.wp-block-social-links.is-style-logos-only .wp-social-link-youtube {
+	color: #ff0100
+}
+.wp-block-social-links.is-style-pill-shape .wp-social-link {
+	width: auto
+}
+.wp-block-social-links.is-style-pill-shape .wp-social-link a {
+	padding-left: 16px;
+	padding-right: 16px
+}
+.wp-block-spacer {
+	clear: both
+}
+p.wp-block-subhead {
+	font-size: 1.1em;
+	font-style: italic;
+	opacity: .75
+}
+.wp-block-table {
+	overflow-x: auto
+}
+.wp-block-table table {
+	width: 100%
+}
+.wp-block-table .has-fixed-layout {
+	table-layout: fixed;
+	width: 100%
+}
+.wp-block-table .has-fixed-layout td, .wp-block-table .has-fixed-layout th {
+	word-break: break-word
+}
+.wp-block-table.aligncenter, .wp-block-table.alignleft, .wp-block-table.alignright {
+	display: table;
+	width: auto
+}
+.wp-block-table.aligncenter td, .wp-block-table.aligncenter th, .wp-block-table.alignleft td, .wp-block-table.alignleft th, .wp-block-table.alignright td, .wp-block-table.alignright th {
+	word-break: break-word
+}
+.wp-block-table .has-subtle-light-gray-background-color {
+	background-color: #f3f4f5
+}
+.wp-block-table .has-subtle-pale-green-background-color {
+	background-color: #e9fbe5
+}
+.wp-block-table .has-subtle-pale-blue-background-color {
+	background-color: #e7f5fe
+}
+.wp-block-table .has-subtle-pale-pink-background-color {
+	background-color: #fcf0ef
+}
+.wp-block-table.is-style-stripes {
+	border-spacing: 0;
+	border-collapse: inherit;
+	background-color: transparent;
+	border-bottom: 1px solid #f3f4f5
+}
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: #f3f4f5
+}
+.wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
+	background-color: #f3f4f5
+}
+.wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
+	background-color: #e9fbe5
+}
+.wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd) {
+	background-color: #e7f5fe
+}
+.wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd) {
+	background-color: #fcf0ef
+}
+.wp-block-table.is-style-stripes td, .wp-block-table.is-style-stripes th {
+	border-color: transparent
+}
+.wp-block-text-columns, .wp-block-text-columns.aligncenter {
+	display: flex
+}
+.wp-block-text-columns .wp-block-column {
+	margin: 0 16px;
+	padding: 0
+}
+.wp-block-text-columns .wp-block-column:first-child {
+	margin-left: 0
+}
+.wp-block-text-columns .wp-block-column:last-child {
+	margin-right: 0
+}
+.wp-block-text-columns.columns-2 .wp-block-column {
+	width: 50%
+}
+.wp-block-text-columns.columns-3 .wp-block-column {
+	width: 33.33333%
+}
+.wp-block-text-columns.columns-4 .wp-block-column {
+	width: 25%
+}
+pre.wp-block-verse {
+	white-space: nowrap;
+	overflow: auto
+}
+.wp-block-video {
+	margin-left: 0;
+	margin-right: 0
+}
+.wp-block-video video {
+	max-width: 100%
+}
+@supports ((position:-webkit-sticky) or (position:sticky)) {
+	.wp-block-video [poster] {
+		-o-object-fit: cover;
+		object-fit: cover
+	}
+}
+.wp-block-video.aligncenter {
+	text-align: center
+}
+.wp-block-video figcaption {
+	margin-top: .5em;
+	margin-bottom: 1em
+}
+:root .has-pale-pink-background-color {
+	background-color: #f78da7
+}
+:root .has-vivid-red-background-color {
+	background-color: #cf2e2e
+}
+:root .has-luminous-vivid-orange-background-color {
+	background-color: #ff6900
+}
+:root .has-luminous-vivid-amber-background-color {
+	background-color: #fcb900
+}
+:root .has-light-green-cyan-background-color {
+	background-color: #7bdcb5
+}
+:root .has-vivid-green-cyan-background-color {
+	background-color: #00d084
+}
+:root .has-pale-cyan-blue-background-color {
+	background-color: #8ed1fc
+}
+:root .has-vivid-cyan-blue-background-color {
+	background-color: #0693e3
+}
+:root .has-vivid-purple-background-color {
+	background-color: #9b51e0
+}
+:root .has-very-light-gray-background-color {
+	background-color: #eee
+}
+:root .has-cyan-bluish-gray-background-color {
+	background-color: #abb8c3
+}
+:root .has-very-dark-gray-background-color {
+	background-color: #313131
+}
+:root .has-pale-pink-color {
+	color: #f78da7
+}
+:root .has-vivid-red-color {
+	color: #cf2e2e
+}
+:root .has-luminous-vivid-orange-color {
+	color: #ff6900
+}
+:root .has-luminous-vivid-amber-color {
+	color: #fcb900
+}
+:root .has-light-green-cyan-color {
+	color: #7bdcb5
+}
+:root .has-vivid-green-cyan-color {
+	color: #00d084
+}
+:root .has-pale-cyan-blue-color {
+	color: #8ed1fc
+}
+:root .has-vivid-cyan-blue-color {
+	color: #0693e3
+}
+:root .has-vivid-purple-color {
+	color: #9b51e0
+}
+:root .has-very-light-gray-color {
+	color: #eee
+}
+:root .has-cyan-bluish-gray-color {
+	color: #abb8c3
+}
+:root .has-very-dark-gray-color {
+	color: #313131
+}
+.has-small-font-size {
+	font-size: 13px
+}
+.has-normal-font-size, .has-regular-font-size {
+	font-size: 16px
+}
+.has-medium-font-size {
+	font-size: 20px
+}
+.has-large-font-size {
+	font-size: 36px
+}
+.has-huge-font-size, .has-larger-font-size {
+	font-size: 42px
+}
+.has-text-align-center {
+	text-align: center
+}
+.has-text-align-left {
+	text-align: left
+}
+.has-text-align-right {
+	text-align: right
+}
