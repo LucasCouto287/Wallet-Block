@@ -1025,3 +1025,21 @@ p.has-text-color a {
 	background-color: #fe4500;
 	color: #fff
 }
+
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-skype {
+	background-color: #0478d7;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-snapchat {
+	background-color: #fefc00;
+	color: #fff;
+	stroke: #000
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-soundcloud {
+	background-color: #ff5600;
+	color: #fff
+}
+.wp-block-social-links:not(.is-style-logos-only) .wp-social-link-spotify {
+	background-color: #1bd760;
+	color: #fff
+}
