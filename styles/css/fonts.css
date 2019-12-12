@@ -639,3 +639,19 @@
     unicode-range: U+1F00-1FFF;
   }
   /* greek */
+ @font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwlBduz8A.woff2) format('woff2');
+    unicode-range: U+0370-03FF;
+  }
+  /* vietnamese */
+  @font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 900;
+    src: local('Source Sans Pro Black'), local('SourceSansPro-Black'), url(https://fonts.gstatic.com/s/sourcesanspro/v13/6xKydSBYKcSV-LCoeQqfX1RYOo3iu4nwmBduz8A.woff2) format('woff2');
+    unicode-range: U+0102-0103, U+0110-0111, U+1EA0-1EF9, U+20AB;
+  }
+  /* latin-ext */
