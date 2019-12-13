@@ -207,3 +207,21 @@
         width: 36.6%;
         margin-right: 8%;
     }
+ .et_pb_gutters4 .et_pb_column_3_5, .et_pb_gutters4 .et_pb_row .et_pb_column_3_5 {
+        width: 55.40%;
+        margin-right: 8%;
+    }
+    
+    .et_pb_section .et_pb_row .et_pb_column.et_pb_specialty_column, .et_pb_section .et_pb_row .et_pb_column.et_pb_column_single {
+        width: 100% !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    .et_pb_column_1_7:nth-child(3n+0), .et_pb_row .et_pb_column_1_7:nth-child(3n+0)
+    , .et_pb_column_1_8:nth-child(3n+0), .et_pb_row .et_pb_column_1_8:nth-child(3n+0)
+    , .et_pb_column_1_6:nth-child(3n+0), .et_pb_row .et_pb_column_1_6:nth-child(3n+0)
+    , .et_pb_column_1_5:nth-child(3n+0), .et_pb_row .et_pb_column_1_5:nth-child(3n+0) {
+        margin-right: 0 !important;
+    }
+}
