@@ -151,3 +151,9 @@
         width: 40%;
         margin-right: 0%;
     }
+ 
+    .et_pb_gutters1 .et_pb_column_3_5, .et_pb_gutters1 .et_pb_row .et_pb_column_3_5 {
+        width: 60%;
+        margin-right: 0%;
+    }
+    
