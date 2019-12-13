@@ -295,3 +295,26 @@
         width: 47.243% !important;
         margin-right: 5.5%;
     }    
+ 
+    /*gutters 4*/
+    .et_pb_gutters4 .et_pb_column_1_6
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_1_6
+    , .et_pb_gutters4 .et_pb_column_1_7
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_1_7
+    , .et_pb_gutters4 .et_pb_column_1_8
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_1_8
+    , .et_pb_gutters4 .et_pb_column_5_6
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_5_6
+    , .et_pb_gutters4 .et_pb_column_1_5
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_1_5
+    , .et_pb_gutters4 .et_pb_column_2_5
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_2_5
+    , .et_pb_gutters4 .et_pb_column_3_5
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_3_5
+    , .et_pb_gutters4 .et_pb_column_4_5
+    , .et_pb_gutters4 .et_pb_row .et_pb_column_4_5
+    {
+        width: 46% !important;
+        margin-right: 8%;
+    }
+    
