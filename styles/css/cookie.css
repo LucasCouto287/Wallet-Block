@@ -1,0 +1,7 @@
+.cc-window {
+	opacity: 1;
+	transition: opacity 1s ease
+}
+.cc-window.cc-invisible {
+	opacity: 0
+}
