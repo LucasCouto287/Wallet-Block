@@ -5,3 +5,9 @@
 .cc-window.cc-invisible {
 	opacity: 0
 }
+.cc-animate.cc-revoke {
+	transition: transform 1s ease
+}
+.cc-animate.cc-revoke.cc-top {
+	transform: translateY(-2em)
+}
