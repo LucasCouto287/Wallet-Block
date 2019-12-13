@@ -185,3 +185,13 @@
         margin-right: 5.5%;
     }
     
+ .et_pb_gutters3 .et_pb_column_2_5, .et_pb_gutters3 .et_pb_row .et_pb_column_2_5 {
+        width: 34.6%;
+        margin-right: 5.5%;
+    }
+    
+    .et_pb_gutters3 .et_pb_column_3_5, .et_pb_gutters3 .et_pb_row .et_pb_column_3_5 {
+        width: 59.9%;
+        margin-right: 5.5%;
+    }
+    
