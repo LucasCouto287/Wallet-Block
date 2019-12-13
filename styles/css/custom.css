@@ -354,3 +354,16 @@
         width: 100%  !important;
         margin: 0 0 30px 0;
     }
+ 
+    .et_pb_row .et_pb_column.et_pb_column_1_6:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_1_7:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_1_8:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_5_6:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_1_5:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_2_5:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_3_5:last-child
+    , .et_pb_row .et_pb_column.et_pb_column_4_5:last-child
+    {
+        margin-bottom: 0;
+    }
+}
