@@ -11,3 +11,9 @@
 .cc-animate.cc-revoke.cc-top {
 	transform: translateY(-2em)
 }
+.cc-animate.cc-revoke.cc-bottom {
+	transform: translateY(2em)
+}
+.cc-animate.cc-revoke.cc-active.cc-bottom, .cc-animate.cc-revoke.cc-active.cc-top, .cc-revoke:hover {
+	transform: translateY(0)
+}
