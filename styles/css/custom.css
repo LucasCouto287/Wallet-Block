@@ -317,4 +317,26 @@
         width: 46% !important;
         margin-right: 8%;
     }
-    
+        
+    .et_pb_column_1_6:nth-child(even)
+    , .et_pb_row .et_pb_column_1_6:nth-child(even)
+    , .et_pb_column_1_7:nth-child(even)
+    , .et_pb_row .et_pb_column_1_7:nth-child(even)
+    , .et_pb_column_1_8:nth-child(even)
+    , .et_pb_row .et_pb_column_1_8:nth-child(even)
+    , .et_pb_column_5_6:nth-child(even)
+    , .et_pb_row .et_pb_column_5_6:nth-child(even)
+    ,  .et_pb_column_1_5:nth-child(even)
+    , .et_pb_row .et_pb_column_1_5:nth-child(even)
+    ,  .et_pb_column_2_5:nth-child(even)
+    , .et_pb_row .et_pb_column_2_5:nth-child(even)
+    ,  .et_pb_column_3_5:nth-child(even)
+    , .et_pb_row .et_pb_column_3_5:nth-child(even)
+    ,  .et_pb_column_4_5:nth-child(even)
+    , .et_pb_row .et_pb_column_4_5:nth-child(even)
+    ,  .et_pb_column_1_4:nth-child(even)
+    , .et_pb_row .et_pb_column_1_4:nth-child(even)
+    {
+        margin-right: 0 !important;
+    }
+}
