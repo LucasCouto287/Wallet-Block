@@ -83,3 +83,22 @@ img.emoji {
 <script type='text/javascript' src='              '></script>	
 	
 	
+</script>
+<script type='text/javascript' src='          '></script>
+<script>
+				document.addEventListener( "DOMContentLoaded", function( event ) {
+					window.et_location_hash = window.location.hash;
+					if ( "" !== window.et_location_hash ) {
+						// Prevent jump to anchor - Firefox
+						window.scrollTo( 0, 0 );
+						var et_anchor_element = document.getElementById( window.et_location_hash.substring( 1 ) );
+						if( et_anchor_element === null ) {
+						    return;
+						}
+						window.et_location_hash_style = et_anchor_element.style.display;
+						// Prevent jump to anchor - Other Browsers
+						et_anchor_element.style.display = "none";
+					}
+				} );
+		</script>
+	
